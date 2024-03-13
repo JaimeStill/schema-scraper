@@ -1,8 +1,8 @@
 # Product
 
-[Relationships](#relationships)
-[Columns](#columns)
-[Dependency Map](#dependency-map)
+* [Relationships](#relationships)
+* [Columns](#columns)
+* [Dependency Map](#dependency-map)
 
 ## Relationships
 [Back to Top](#product)

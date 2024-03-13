@@ -70,9 +70,9 @@ public class ScraperWriter(string root, Connector connector)
     {
         await writer.WriteLineAsync($"# {table}");
         await writer.WriteLineAsync();
-        await writer.WriteLineAsync("[Relationships](#relationships)");
-        await writer.WriteLineAsync("[Columns](#columns)");
-        await writer.WriteLineAsync("[Dependency Map](#dependency-map)");
+        await writer.WriteLineAsync("* [Relationships](#relationships)");
+        await writer.WriteLineAsync("* [Columns](#columns)");
+        await writer.WriteLineAsync("* [Dependency Map](#dependency-map)");
         await writer.WriteLineAsync();
     }
 
