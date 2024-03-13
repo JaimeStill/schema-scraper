@@ -1,6 +1,6 @@
 # Schema Scraper
 
-This repository contains a [Schema Scraping CLI](./src) that allows you to connect to a SQL database and generate metadata documentation for all tables that contain data. The [schema](./schema) directory was generated with:
+This repository contains a [Schema Scraping CLI](./src) that allows you to connect to a SQL database and generate metadata documentation for all tables that contain data. The [schema](./schema) directory was generated from the `src` directory by running:
 
 ```pwsh
 dotnet run -- schema generate -c "AdventureWorks"
