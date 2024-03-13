@@ -1,4 +1,4 @@
-SELECT
+SELECT DISTINCT
     tr.name [Table]
 FROM
     sys.foreign_keys fk

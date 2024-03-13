@@ -37,5 +37,4 @@ Column | Type | Is Nullable
 * [ProductModel](./ProductModel.md)
 * [SalesOrderHeader](./SalesOrderHeader.md)
 * [Address](./Address.md)
-* [Address](./Address.md)
 * [Customer](./Customer.md)
