@@ -8,7 +8,7 @@ dotnet run -- schema generate -c "AdventureWorks"
 
 This repository is configured to scrape the schema for the [AdventureWorks 2022 Lightweight](https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver16&tabs=ssms) database on a local SQL Server instance named `.\DevSql`. If you want to run the CLI against a different SQL database, just adjust the keys in [connections.json](./src/connections.json).
 
-This generated the [tables.md](./schema/tables.md) document, which contains all of the tables that have data along with the number of records in that table. Each table is linked to the specific metadata document for that table.
+This generated the [tables.md](./schema/tables.md) document, which contains all of the tables that have data along with the number of records in that table. Each table is linked to the specific metadata document for that table, for instance [Product.md](./schema/tables/Product.md).
 
 Each table metadata document contains three sections:
 * **Relationships** - Provides the relationship metadata for the table and links to dependent tables.
