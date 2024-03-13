@@ -1,0 +1,6 @@
+{
+    "AdventureWorks": {
+        "Server": ".\\DevSql",
+        "Database": "AdventureWorksLT2022"
+    }
+}
