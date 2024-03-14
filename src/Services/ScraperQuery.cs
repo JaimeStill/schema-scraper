@@ -22,7 +22,22 @@ public class ScraperQuery
         connector = new(server, db);
     }
 
-    public async Task<List<ScraperTable>> GetTables()
+    public async Task<List<string>> MapDependencies(string table) =>
+        await Query<string>(table, Queries.MapDependencies);
+
+    public async Task<List<string>> MapDependents(string table) =>
+        await Query<string>(table, Queries.MapDependents);
+
+    public async Task<List<ScraperColumn>> QueryColumns(string table) =>
+        await Query<ScraperColumn>(table, Queries.QueryColumns);
+
+    public async Task<List<ScraperDependency>> QueryDependencies(string table) =>
+        await Query<ScraperDependency>(table, Queries.QueryDependencies);
+
+    public async Task<List<ScraperDependent>> QueryDependents(string table) =>
+        await Query<ScraperDependent>(table, Queries.QueryDependents);
+
+    public async Task<List<ScraperTable>> QueryTables()
     {
         string tableQuery = await Connector.GetQuery(
             Queries.QueryTables
@@ -31,16 +46,7 @@ public class ScraperQuery
         return await connector.Query<ScraperTable>(tableQuery);
     }
 
-    public async Task<List<ScraperColumn>> GetColumns(string table) =>
-        await BuildGet<ScraperColumn>(table, Queries.QueryColumns);
-
-    public async Task<List<string>> GetMaps(string table) =>
-        await BuildGet<string>(table, Queries.MapDependencies);
-
-    public async Task<List<ScraperRelationship>> GetRelationships(string table) =>
-        await BuildGet<ScraperRelationship>(table, Queries.QueryDependencies);
-
-    async Task<List<T>> BuildGet<T>(string table, string file)
+    async Task<List<T>> Query<T>(string table, string file)
     {
         string query = (await Connector.GetQuery(file)).Replace(TABLENAME, table);
         return await connector.Query<T>(query);

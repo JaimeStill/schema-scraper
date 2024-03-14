@@ -1,5 +1,5 @@
 namespace SchemaScraper.Models;
-public class ScraperRelationship
+public class ScraperDependency
 {
     public string ForeignKeyName { get; set; } = string.Empty;
     public string ForeignKeyColumn { get; set; } = string.Empty;

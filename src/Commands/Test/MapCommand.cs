@@ -32,7 +32,7 @@ public class MapCommand()
     {
         Console.WriteLine($"{new(' ', iter * 2)}{table}");
 
-        IEnumerable<string> maps = await query.GetMaps(table);
+        IEnumerable<string> maps = await query.MapDependencies(table);
         maps = maps.Where(x => !tables.Contains(x)).ToList();
         tables = tables.Concat(maps);
 
@@ -55,7 +55,7 @@ public class MapCommand()
     )
     {
         Console.WriteLine($"{new(' ', iter * 2)}{table}");
-        IEnumerable<string> maps = await query.GetMaps(table);
+        IEnumerable<string> maps = await query.MapDependencies(table);
 
         foreach (string map in maps.Where(x => !tables.Contains(x)))
         {

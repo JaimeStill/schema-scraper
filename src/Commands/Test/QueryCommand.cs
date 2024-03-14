@@ -13,7 +13,7 @@ public class QueryCommand()
     static async Task Call()
     {
         ScraperQuery query = new("AdventureWorks");
-        List<ScraperTable> tables = await query.GetTables();
+        List<ScraperTable> tables = await query.QueryTables();
 
         tables.ForEach(t => Console.WriteLine($"{t.Table} - {t.RecordCount}"));
     }

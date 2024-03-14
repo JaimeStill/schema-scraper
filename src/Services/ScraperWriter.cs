@@ -19,7 +19,7 @@ public class ScraperWriter(string root, Connector connector)
         try
         {
             InitializeRoot();
-            List<ScraperTable> tables = await query.GetTables();
+            List<ScraperTable> tables = await query.QueryTables();
 
             using StreamWriter writer = InitializeDocument("tables.md");
             await InitializeTables(writer);
@@ -84,22 +84,32 @@ public class ScraperWriter(string root, Connector connector)
     {
         Console.WriteLine($"Generating relationship metadata for {table}");
 
-        List<ScraperRelationship> relationships = await query.GetRelationships(table);
-        await InitializeRelationships(writer, relationships, table);
+        List<ScraperDependency> relationships = await query.QueryDependencies(table);
+        await FormatHeader(writer, "Relationships", table);
+        await GenerateDependencies(writer, table);
+        await GenerateDependents(writer, table);
+    }
 
-        foreach (ScraperRelationship relationship in relationships)
+    #region Dependencies
+
+    async Task GenerateDependencies(StreamWriter writer, string table)
+    {
+        List<ScraperDependency> deps = await query.QueryDependencies(table);
+        await InitializeDependencies(writer, deps, table);
+
+        foreach (ScraperDependency dep in deps)
             await writer.WriteLineAsync(
-                WriteRelationshipRow(relationship, table)
+                WriteDependency(dep, table)
             );
 
         await writer.WriteLineAsync();
     }
 
-    static async Task InitializeRelationships(StreamWriter writer, List<ScraperRelationship> relationships, string table)
+    static async Task InitializeDependencies(StreamWriter writer, List<ScraperDependency> deps, string table)
     {
-        await FormatHeader(writer, "Relationships", table);
+        await FormatHeader(writer, "Dependencies", table);
 
-        if (relationships.Count > 0)
+        if (deps.Count > 0)
         {
             await writer.WriteLineAsync(
                 "Foreign Key Name | Foreign Key Column | Dependency Table | Dependency Key Column"
@@ -111,17 +121,54 @@ public class ScraperWriter(string root, Connector connector)
         }
         else
             await writer.WriteLineAsync(
-                "No relationships defined"
+                "No dependencies defined"
             );
     }
 
-    static string WriteRelationshipRow(ScraperRelationship relationship, string table) =>
-        $"**{relationship.ForeignKeyName}** | `{relationship.ForeignKeyColumn}` | {FormatDependencyTable(relationship.DependencyTable, table)} | `{relationship.DependencyKey}`";
+    static string WriteDependency(ScraperDependency dep, string table) =>
+        $"**{dep.ForeignKeyName}** | `{dep.ForeignKeyColumn}` | {FormatTableLink(dep.DependencyTable, table)} | `{dep.DependencyKey}`";
 
-    static string FormatDependencyTable(string dependency, string table) =>
-        dependency.Equals(table, StringComparison.CurrentCultureIgnoreCase)
-            ? dependency
-            : FormatLink(dependency);
+    #endregion
+
+    #region Dependents
+
+    async Task GenerateDependents(StreamWriter writer, string table)
+    {
+        List<ScraperDependent> deps = await query.QueryDependents(table);
+        await InitializeDependents(writer, deps, table);
+
+        foreach (ScraperDependent dep in deps)
+            await writer.WriteLineAsync(
+                WriteDependent(dep, table)
+            );
+        
+        await writer.WriteLineAsync();
+    }
+
+    static async Task InitializeDependents(StreamWriter writer, List<ScraperDependent> deps, string table)
+    {
+        await FormatHeader(writer, "Dependents", table);
+
+        if (deps.Count > 0)
+        {
+            await writer.WriteLineAsync(
+                "Dependent Table | Foreign Key Name | Foreign Key Column | Dependency Key Column"
+            );
+
+            await writer.WriteLineAsync(
+                "----------------|------------------|--------------------|----------------------"
+            );
+        }
+        else
+            await writer.WriteLineAsync(
+                "No dependencies defined"
+            );
+    }
+
+    static string WriteDependent(ScraperDependent dep, string table) =>
+        $"{FormatTableLink(dep.DependentTable, table)} | **{dep.ForeignKeyName}** | `{dep.ForeignKeyColumn}` | `{dep.DependencyKey}`";
+
+    #endregion
 
     #endregion
 
@@ -131,7 +178,7 @@ public class ScraperWriter(string root, Connector connector)
     {
         Console.WriteLine($"Generating column metadata for {table}");
 
-        List<ScraperColumn> columns = await query.GetColumns(table);
+        List<ScraperColumn> columns = await query.QueryColumns(table);
         await InitializeColumns(writer, columns, table);
 
         foreach (ScraperColumn column in columns)
@@ -169,7 +216,7 @@ public class ScraperWriter(string root, Connector connector)
     async Task GenerateMaps(StreamWriter writer, string table)
     {
         Console.WriteLine($"Generating dependency map metadata {table}");
-        bool hasMaps = (await query.GetMaps(table)).Count != 0;
+        bool hasMaps = (await query.MapDependencies(table)).Count != 0;
         await InitializeMaps(writer, table, hasMaps);
 
         if (hasMaps)
@@ -197,7 +244,7 @@ public class ScraperWriter(string root, Connector connector)
 
     async Task GenerateDistinctMap(StreamWriter writer, string table, IEnumerable<string> tables)
     {
-        List<string> maps = await query.GetMaps(table);
+        List<string> maps = await query.MapDependencies(table);
         maps = maps.Where(x => !tables.Contains(x)).ToList();
         tables = tables.Concat(maps);
 
@@ -226,6 +273,11 @@ public class ScraperWriter(string root, Connector connector)
 
     static string FormatLink(string table, string prefix = "./") =>
         $"[{table}]({prefix}{table}.md)";
+
+    static string FormatTableLink(string reference, string table) =>
+        reference.Equals(table, StringComparison.CurrentCultureIgnoreCase)
+            ? reference
+            : FormatLink(reference);
 
     StreamWriter InitializeDocument(string name, string? subdir = null)
     {
