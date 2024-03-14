@@ -61,8 +61,8 @@ public class ScraperWriter(string root, Connector connector)
 
         using StreamWriter writer = InitializeDocument($"{table}.md", "tables");
         await InitializeTable(writer, table);
-        await GenerateRelationships(writer, table);
         await GenerateColumns(writer, table);
+        await GenerateRelationships(writer, table);
         await GenerateMaps(writer, table);
     }
 
@@ -70,105 +70,11 @@ public class ScraperWriter(string root, Connector connector)
     {
         await writer.WriteLineAsync($"# {table}");
         await writer.WriteLineAsync();
-        await writer.WriteLineAsync("* [Relationships](#relationships)");
         await writer.WriteLineAsync("* [Columns](#columns)");
+        await writer.WriteLineAsync("* [Relationships](#relationships)");
         await writer.WriteLineAsync("* [Dependency Map](#dependency-map)");
         await writer.WriteLineAsync();
     }
-
-    #endregion
-
-    #region Relationships
-
-    async Task GenerateRelationships(StreamWriter writer, string table)
-    {
-        Console.WriteLine($"Generating relationship metadata for {table}");
-
-        List<ScraperDependency> relationships = await query.QueryDependencies(table);
-        await FormatHeader(writer, "Relationships", table);
-        await GenerateDependencies(writer, table);
-        await GenerateDependents(writer, table);
-    }
-
-    #region Dependencies
-
-    async Task GenerateDependencies(StreamWriter writer, string table)
-    {
-        List<ScraperDependency> deps = await query.QueryDependencies(table);
-        await InitializeDependencies(writer, deps, table);
-
-        foreach (ScraperDependency dep in deps)
-            await writer.WriteLineAsync(
-                WriteDependency(dep, table)
-            );
-
-        await writer.WriteLineAsync();
-    }
-
-    static async Task InitializeDependencies(StreamWriter writer, List<ScraperDependency> deps, string table)
-    {
-        await FormatHeader(writer, "Dependencies", table);
-
-        if (deps.Count > 0)
-        {
-            await writer.WriteLineAsync(
-                "Foreign Key Name | Foreign Key Column | Dependency Table | Dependency Key Column"
-            );
-
-            await writer.WriteLineAsync(
-                "-----------------|--------------------|------------------|----------------------"
-            );
-        }
-        else
-            await writer.WriteLineAsync(
-                "No dependencies defined"
-            );
-    }
-
-    static string WriteDependency(ScraperDependency dep, string table) =>
-        $"**{dep.ForeignKeyName}** | `{dep.ForeignKeyColumn}` | {FormatTableLink(dep.DependencyTable, table)} | `{dep.DependencyKey}`";
-
-    #endregion
-
-    #region Dependents
-
-    async Task GenerateDependents(StreamWriter writer, string table)
-    {
-        List<ScraperDependent> deps = await query.QueryDependents(table);
-        await InitializeDependents(writer, deps, table);
-
-        foreach (ScraperDependent dep in deps)
-            await writer.WriteLineAsync(
-                WriteDependent(dep, table)
-            );
-        
-        await writer.WriteLineAsync();
-    }
-
-    static async Task InitializeDependents(StreamWriter writer, List<ScraperDependent> deps, string table)
-    {
-        await FormatHeader(writer, "Dependents", table);
-
-        if (deps.Count > 0)
-        {
-            await writer.WriteLineAsync(
-                "Dependent Table | Foreign Key Name | Foreign Key Column | Dependency Key Column"
-            );
-
-            await writer.WriteLineAsync(
-                "----------------|------------------|--------------------|----------------------"
-            );
-        }
-        else
-            await writer.WriteLineAsync(
-                "No dependencies defined"
-            );
-    }
-
-    static string WriteDependent(ScraperDependent dep, string table) =>
-        $"{FormatTableLink(dep.DependentTable, table)} | **{dep.ForeignKeyName}** | `{dep.ForeignKeyColumn}` | `{dep.DependencyKey}`";
-
-    #endregion
 
     #endregion
 
@@ -208,6 +114,139 @@ public class ScraperWriter(string root, Connector connector)
                 "No columns defined"
             );
     }
+
+    #endregion
+
+    #region Relationships
+
+    async Task GenerateRelationships(StreamWriter writer, string table)
+    {
+        Console.WriteLine($"Generating relationship metadata for {table}");
+        await InitializeRelationships(writer, table);
+        await GenerateDependencies(writer, table);
+        await GenerateDependents(writer, table);
+    }
+
+    static async Task InitializeRelationships(StreamWriter writer, string table)
+    {
+        await FormatHeader(writer, "Relationships", table);
+        await writer.WriteLineAsync();
+        await writer.WriteLineAsync(
+            "The sections that follow define:"
+        );
+        await writer.WriteLineAsync(
+            $"* **Dependencies** - foreign key relationships defined by `{table}`."
+        );
+        await writer.WriteLineAsync(
+            $"* **Dependents** - foreign key relationships defined by other tables that reference `{table}`."
+        );
+        await writer.WriteLineAsync();
+
+    }
+
+    #region Dependencies
+
+    async Task GenerateDependencies(StreamWriter writer, string table)
+    {
+        List<ScraperDependency> deps = await query.QueryDependencies(table);
+        await InitializeDependencies(writer, deps, table);
+
+        foreach (ScraperDependency dep in deps)
+            await writer.WriteLineAsync(
+                WriteDependency(dep, table)
+            );
+
+        await writer.WriteLineAsync();
+    }
+
+    static async Task InitializeDependencies(StreamWriter writer, List<ScraperDependency> deps, string table)
+    {
+        await FormatHeader(writer, "Dependencies", table, "###");
+
+        await writer.WriteLineAsync(
+            $"**Dependency Table** refers to the table that the foreign key defined by `{table}` maps to."
+        );
+
+        await writer.WriteLineAsync();
+        
+        await writer.WriteLineAsync(
+            $"**Foreign Key Column** is the column in `{table}` that maps to **Dependency Key Column** in **Dependency Table**."
+        );
+
+        await writer.WriteLineAsync();
+
+        if (deps.Count > 0)
+        {
+            await writer.WriteLineAsync(
+                "Foreign Key Name | Foreign Key Column | Dependency Table | Dependency Key Column"
+            );
+
+            await writer.WriteLineAsync(
+                "-----------------|--------------------|------------------|----------------------"
+            );
+        }
+        else
+            await writer.WriteLineAsync(
+                "No dependencies defined"
+            );
+    }
+
+    static string WriteDependency(ScraperDependency dep, string table) =>
+        $"**{dep.ForeignKeyName}** | `{dep.ForeignKeyColumn}` | {FormatTableLink(dep.DependencyTable, table)} | `{dep.DependencyKey}`";
+
+    #endregion
+
+    #region Dependents
+
+    async Task GenerateDependents(StreamWriter writer, string table)
+    {
+        List<ScraperDependent> deps = await query.QueryDependents(table);
+        await InitializeDependents(writer, deps, table);
+
+        foreach (ScraperDependent dep in deps)
+            await writer.WriteLineAsync(
+                WriteDependent(dep, table)
+            );
+        
+        await writer.WriteLineAsync();
+    }
+
+    static async Task InitializeDependents(StreamWriter writer, List<ScraperDependent> deps, string table)
+    {
+        await FormatHeader(writer, "Dependents", table, "###");
+
+        await writer.WriteLineAsync(
+            $"**Dependent Table** refers to the table that defines a foreign key mapping to {table}."
+        );
+        
+        await writer.WriteLineAsync();
+
+        await writer.WriteLineAsync(
+            $"**Dependency Key Column** is the column in {table} that maps to **Foreign Key Column** in **Dependent Table**."
+        );
+
+        await writer.WriteLineAsync();
+
+        if (deps.Count > 0)
+        {
+            await writer.WriteLineAsync(
+                "Dependent Table | Foreign Key Name | Foreign Key Column | Dependency Key Column"
+            );
+
+            await writer.WriteLineAsync(
+                "----------------|------------------|--------------------|----------------------"
+            );
+        }
+        else
+            await writer.WriteLineAsync(
+                "No dependencies defined"
+            );
+    }
+
+    static string WriteDependent(ScraperDependent dep, string table) =>
+        $"{FormatTableLink(dep.DependentTable, table)} | **{dep.ForeignKeyName}** | `{dep.ForeignKeyColumn}` | `{dep.DependencyKey}`";
+
+    #endregion
 
     #endregion
 
@@ -264,9 +303,9 @@ public class ScraperWriter(string root, Connector connector)
 
     #region Utility
     
-    static async Task FormatHeader(StreamWriter writer, string header, string table)
+    static async Task FormatHeader(StreamWriter writer, string header, string table, string level = "##")
     {
-        await writer.WriteLineAsync($"## {header}");
+        await writer.WriteLineAsync($"{level} {header}");
         await writer.WriteLineAsync($"[Back to Top](#{table.ToLower()})");
         await writer.WriteLineAsync();
     }
