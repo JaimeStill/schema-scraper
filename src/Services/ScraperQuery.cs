@@ -25,20 +25,20 @@ public class ScraperQuery
     public async Task<List<ScraperTable>> GetTables()
     {
         string tableQuery = await Connector.GetQuery(
-            Queries.TableQuery
+            Queries.QueryTables
         );
 
         return await connector.Query<ScraperTable>(tableQuery);
     }
 
     public async Task<List<ScraperColumn>> GetColumns(string table) =>
-        await BuildGet<ScraperColumn>(table, Queries.ColumnQuery);
+        await BuildGet<ScraperColumn>(table, Queries.QueryColumns);
 
     public async Task<List<string>> GetMaps(string table) =>
-        await BuildGet<string>(table, Queries.MapQuery);
+        await BuildGet<string>(table, Queries.MapDependencies);
 
     public async Task<List<ScraperRelationship>> GetRelationships(string table) =>
-        await BuildGet<ScraperRelationship>(table, Queries.RelationshipQuery);
+        await BuildGet<ScraperRelationship>(table, Queries.QueryDependencies);
 
     async Task<List<T>> BuildGet<T>(string table, string file)
     {
