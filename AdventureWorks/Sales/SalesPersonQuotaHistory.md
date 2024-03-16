@@ -1,12 +1,15 @@
 # Sales.SalesPersonQuotaHistory
 
-**Schema**: Sales
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#salespersonquotahistory)
+[Back to Top](#salessalespersonquotahistory)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -17,7 +20,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#salespersonquotahistory)
+[Back to Top](#salessalespersonquotahistory)
 
 
 The sections that follow define:
@@ -25,7 +28,7 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Sales.SalesPersonQuotaHistory`.
 
 ### Dependencies
-[Back to Top](#salespersonquotahistory)
+[Back to Top](#salessalespersonquotahistory)
 
 
 **Table** refers to the table that the foreign key defined by `Sales.SalesPersonQuotaHistory` maps to.
@@ -36,17 +39,17 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Sales.SalesPerson](./SalesPerson.md) | `BusinessEntityID` | `BusinessEntityID` | **FK_SalesPersonQuotaHistory_SalesPerson_BusinessEntityID**
 
 ### Dependents
-[Back to Top](#salespersonquotahistory)
+[Back to Top](#salessalespersonquotahistory)
 
 No dependencies defined
 
 ## Maps
-[Back to Top](#salespersonquotahistory)
+[Back to Top](#salessalespersonquotahistory)
 
 ### Dependency Map
-[Back to Top](#salespersonquotahistory)
+[Back to Top](#salessalespersonquotahistory)
 
-> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table SalesPersonQuotaHistory.
+> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Sales.SalesPersonQuotaHistory.
 
 * [Sales.SalesPerson](./SalesPerson.md)
 * [HumanResources.Employee](../HumanResources/Employee.md)
@@ -55,6 +58,6 @@ No dependencies defined
 * [Sales.SalesTerritory](./SalesTerritory.md)
 * [Person.CountryRegion](../Person/CountryRegion.md)
 ### Dependent Map
-[Back to Top](#salespersonquotahistory)
+[Back to Top](#salessalespersonquotahistory)
 
-SalesPersonQuotaHistory has no dependents
+Sales.SalesPersonQuotaHistory has no dependents

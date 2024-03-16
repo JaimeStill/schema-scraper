@@ -1,12 +1,15 @@
 # Sales.SalesOrderDetail
 
-**Schema**: Sales
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#salesorderdetail)
+[Back to Top](#salessalesorderdetail)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -23,7 +26,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#salesorderdetail)
+[Back to Top](#salessalesorderdetail)
 
 
 The sections that follow define:
@@ -31,7 +34,7 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Sales.SalesOrderDetail`.
 
 ### Dependencies
-[Back to Top](#salesorderdetail)
+[Back to Top](#salessalesorderdetail)
 
 
 **Table** refers to the table that the foreign key defined by `Sales.SalesOrderDetail` maps to.
@@ -44,17 +47,17 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Sales.SpecialOfferProduct](./SpecialOfferProduct.md) | `ProductID` | `ProductID` | **FK_SalesOrderDetail_SpecialOfferProduct_SpecialOfferIDProductID**
 
 ### Dependents
-[Back to Top](#salesorderdetail)
+[Back to Top](#salessalesorderdetail)
 
 No dependencies defined
 
 ## Maps
-[Back to Top](#salesorderdetail)
+[Back to Top](#salessalesorderdetail)
 
 ### Dependency Map
-[Back to Top](#salesorderdetail)
+[Back to Top](#salessalesorderdetail)
 
-> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table SalesOrderDetail.
+> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Sales.SalesOrderDetail.
 
 * [Sales.SalesOrderHeader](./SalesOrderHeader.md)
 * [Person.Address](../Person/Address.md)
@@ -95,6 +98,6 @@ No dependencies defined
 * [Production.UnitMeasure](./UnitMeasure.md)
 * [Sales.SpecialOffer](./SpecialOffer.md)
 ### Dependent Map
-[Back to Top](#salesorderdetail)
+[Back to Top](#salessalesorderdetail)
 
-SalesOrderDetail has no dependents
+Sales.SalesOrderDetail has no dependents

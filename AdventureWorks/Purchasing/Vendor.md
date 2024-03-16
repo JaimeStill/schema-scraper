@@ -1,12 +1,15 @@
 # Purchasing.Vendor
 
-**Schema**: Purchasing
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#vendor)
+[Back to Top](#purchasingvendor)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -20,7 +23,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#vendor)
+[Back to Top](#purchasingvendor)
 
 
 The sections that follow define:
@@ -28,7 +31,7 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Purchasing.Vendor`.
 
 ### Dependencies
-[Back to Top](#vendor)
+[Back to Top](#purchasingvendor)
 
 
 **Table** refers to the table that the foreign key defined by `Purchasing.Vendor` maps to.
@@ -39,11 +42,11 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Person.BusinessEntity](../Person/BusinessEntity.md) | `BusinessEntityID` | `BusinessEntityID` | **FK_Vendor_BusinessEntity_BusinessEntityID**
 
 ### Dependents
-[Back to Top](#vendor)
+[Back to Top](#purchasingvendor)
 
-**Table** refers to the table that defines a foreign key mapping to Vendor.
+**Table** refers to the table that defines a foreign key mapping to Purchasing.Vendor.
 
-**Primary Key** is the column in Vendor that maps to **Foreign Key** in **Table**.
+**Primary Key** is the column in Purchasing.Vendor that maps to **Foreign Key** in **Table**.
 
 Table | Primary Key | Foreign Key | Foreign Key Name
 ------|-------------|-------------|-----------------
@@ -51,18 +54,18 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Purchasing.PurchaseOrderHeader](./PurchaseOrderHeader.md) | `BusinessEntityID` | `VendorID` | **FK_PurchaseOrderHeader_Vendor_VendorID**
 
 ## Maps
-[Back to Top](#vendor)
+[Back to Top](#purchasingvendor)
 
 ### Dependency Map
-[Back to Top](#vendor)
+[Back to Top](#purchasingvendor)
 
-> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Vendor.
+> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Purchasing.Vendor.
 
 * [Person.BusinessEntity](../Person/BusinessEntity.md)
 ### Dependent Map
-[Back to Top](#vendor)
+[Back to Top](#purchasingvendor)
 
-> The following is a distinct list of tables captured by recursively evaluating tables that list Vendor as a foreign key dependency.
+> The following is a distinct list of tables captured by recursively evaluating tables that list Purchasing.Vendor as a foreign key dependency.
 
 * [Purchasing.ProductVendor](./ProductVendor.md)
 * [Purchasing.PurchaseOrderHeader](./PurchaseOrderHeader.md)

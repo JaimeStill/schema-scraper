@@ -1,12 +1,15 @@
 # Person.BusinessEntityAddress
 
-**Schema**: Person
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#businessentityaddress)
+[Back to Top](#personbusinessentityaddress)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -17,7 +20,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#businessentityaddress)
+[Back to Top](#personbusinessentityaddress)
 
 
 The sections that follow define:
@@ -25,7 +28,7 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Person.BusinessEntityAddress`.
 
 ### Dependencies
-[Back to Top](#businessentityaddress)
+[Back to Top](#personbusinessentityaddress)
 
 
 **Table** refers to the table that the foreign key defined by `Person.BusinessEntityAddress` maps to.
@@ -38,17 +41,17 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Person.BusinessEntity](./BusinessEntity.md) | `BusinessEntityID` | `BusinessEntityID` | **FK_BusinessEntityAddress_BusinessEntity_BusinessEntityID**
 
 ### Dependents
-[Back to Top](#businessentityaddress)
+[Back to Top](#personbusinessentityaddress)
 
 No dependencies defined
 
 ## Maps
-[Back to Top](#businessentityaddress)
+[Back to Top](#personbusinessentityaddress)
 
 ### Dependency Map
-[Back to Top](#businessentityaddress)
+[Back to Top](#personbusinessentityaddress)
 
-> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table BusinessEntityAddress.
+> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Person.BusinessEntityAddress.
 
 * [Person.Address](./Address.md)
 * [Person.StateProvince](./StateProvince.md)
@@ -58,6 +61,6 @@ No dependencies defined
 * [Person.AddressType](./AddressType.md)
 * [Person.BusinessEntity](./BusinessEntity.md)
 ### Dependent Map
-[Back to Top](#businessentityaddress)
+[Back to Top](#personbusinessentityaddress)
 
-BusinessEntityAddress has no dependents
+Person.BusinessEntityAddress has no dependents

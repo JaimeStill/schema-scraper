@@ -1,12 +1,15 @@
 # Production.ProductInventory
 
-**Schema**: Production
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#productinventory)
+[Back to Top](#productionproductinventory)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -19,7 +22,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#productinventory)
+[Back to Top](#productionproductinventory)
 
 
 The sections that follow define:
@@ -27,7 +30,7 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Production.ProductInventory`.
 
 ### Dependencies
-[Back to Top](#productinventory)
+[Back to Top](#productionproductinventory)
 
 
 **Table** refers to the table that the foreign key defined by `Production.ProductInventory` maps to.
@@ -39,17 +42,17 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Production.Product](./Product.md) | `ProductID` | `ProductID` | **FK_ProductInventory_Product_ProductID**
 
 ### Dependents
-[Back to Top](#productinventory)
+[Back to Top](#productionproductinventory)
 
 No dependencies defined
 
 ## Maps
-[Back to Top](#productinventory)
+[Back to Top](#productionproductinventory)
 
 ### Dependency Map
-[Back to Top](#productinventory)
+[Back to Top](#productionproductinventory)
 
-> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table ProductInventory.
+> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Production.ProductInventory.
 
 * [Production.Location](./Location.md)
 * [Production.Product](./Product.md)
@@ -58,6 +61,6 @@ No dependencies defined
 * [Production.ProductCategory](./ProductCategory.md)
 * [Production.UnitMeasure](./UnitMeasure.md)
 ### Dependent Map
-[Back to Top](#productinventory)
+[Back to Top](#productionproductinventory)
 
-ProductInventory has no dependents
+Production.ProductInventory has no dependents

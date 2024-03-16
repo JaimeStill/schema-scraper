@@ -1,12 +1,15 @@
 # Production.TransactionHistoryArchive
 
-**Schema**: Production
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#transactionhistoryarchive)
+[Back to Top](#productiontransactionhistoryarchive)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -21,7 +24,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#transactionhistoryarchive)
+[Back to Top](#productiontransactionhistoryarchive)
 
 
 The sections that follow define:
@@ -29,24 +32,24 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Production.TransactionHistoryArchive`.
 
 ### Dependencies
-[Back to Top](#transactionhistoryarchive)
+[Back to Top](#productiontransactionhistoryarchive)
 
 
 No dependencies defined
 
 ### Dependents
-[Back to Top](#transactionhistoryarchive)
+[Back to Top](#productiontransactionhistoryarchive)
 
 No dependencies defined
 
 ## Maps
-[Back to Top](#transactionhistoryarchive)
+[Back to Top](#productiontransactionhistoryarchive)
 
 ### Dependency Map
-[Back to Top](#transactionhistoryarchive)
+[Back to Top](#productiontransactionhistoryarchive)
 
-TransactionHistoryArchive has no dependencies
+Production.TransactionHistoryArchive has no dependencies
 ### Dependent Map
-[Back to Top](#transactionhistoryarchive)
+[Back to Top](#productiontransactionhistoryarchive)
 
-TransactionHistoryArchive has no dependents
+Production.TransactionHistoryArchive has no dependents

@@ -1,12 +1,15 @@
 # Person.CountryRegion
 
-**Schema**: Person
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#countryregion)
+[Back to Top](#personcountryregion)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -15,7 +18,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#countryregion)
+[Back to Top](#personcountryregion)
 
 
 The sections that follow define:
@@ -23,17 +26,17 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Person.CountryRegion`.
 
 ### Dependencies
-[Back to Top](#countryregion)
+[Back to Top](#personcountryregion)
 
 
 No dependencies defined
 
 ### Dependents
-[Back to Top](#countryregion)
+[Back to Top](#personcountryregion)
 
-**Table** refers to the table that defines a foreign key mapping to CountryRegion.
+**Table** refers to the table that defines a foreign key mapping to Person.CountryRegion.
 
-**Primary Key** is the column in CountryRegion that maps to **Foreign Key** in **Table**.
+**Primary Key** is the column in Person.CountryRegion that maps to **Foreign Key** in **Table**.
 
 Table | Primary Key | Foreign Key | Foreign Key Name
 ------|-------------|-------------|-----------------
@@ -42,16 +45,16 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Sales.SalesTerritory](../Sales/SalesTerritory.md) | `CountryRegionCode` | `CountryRegionCode` | **FK_SalesTerritory_CountryRegion_CountryRegionCode**
 
 ## Maps
-[Back to Top](#countryregion)
+[Back to Top](#personcountryregion)
 
 ### Dependency Map
-[Back to Top](#countryregion)
+[Back to Top](#personcountryregion)
 
-CountryRegion has no dependencies
+Person.CountryRegion has no dependencies
 ### Dependent Map
-[Back to Top](#countryregion)
+[Back to Top](#personcountryregion)
 
-> The following is a distinct list of tables captured by recursively evaluating tables that list CountryRegion as a foreign key dependency.
+> The following is a distinct list of tables captured by recursively evaluating tables that list Person.CountryRegion as a foreign key dependency.
 
 * [Person.StateProvince](./StateProvince.md)
 * [Person.Address](./Address.md)

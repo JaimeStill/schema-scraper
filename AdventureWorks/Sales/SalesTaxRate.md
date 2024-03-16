@@ -1,12 +1,15 @@
 # Sales.SalesTaxRate
 
-**Schema**: Sales
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#salestaxrate)
+[Back to Top](#salessalestaxrate)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -19,7 +22,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#salestaxrate)
+[Back to Top](#salessalestaxrate)
 
 
 The sections that follow define:
@@ -27,7 +30,7 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Sales.SalesTaxRate`.
 
 ### Dependencies
-[Back to Top](#salestaxrate)
+[Back to Top](#salessalestaxrate)
 
 
 **Table** refers to the table that the foreign key defined by `Sales.SalesTaxRate` maps to.
@@ -38,23 +41,23 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Person.StateProvince](../Person/StateProvince.md) | `StateProvinceID` | `StateProvinceID` | **FK_SalesTaxRate_StateProvince_StateProvinceID**
 
 ### Dependents
-[Back to Top](#salestaxrate)
+[Back to Top](#salessalestaxrate)
 
 No dependencies defined
 
 ## Maps
-[Back to Top](#salestaxrate)
+[Back to Top](#salessalestaxrate)
 
 ### Dependency Map
-[Back to Top](#salestaxrate)
+[Back to Top](#salessalestaxrate)
 
-> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table SalesTaxRate.
+> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Sales.SalesTaxRate.
 
 * [Person.StateProvince](../Person/StateProvince.md)
 * [Person.CountryRegion](./CountryRegion.md)
 * [Sales.SalesTerritory](../Sales/SalesTerritory.md)
 * [Person.CountryRegion](../Person/CountryRegion.md)
 ### Dependent Map
-[Back to Top](#salestaxrate)
+[Back to Top](#salessalestaxrate)
 
-SalesTaxRate has no dependents
+Sales.SalesTaxRate has no dependents

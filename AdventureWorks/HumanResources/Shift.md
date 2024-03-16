@@ -1,12 +1,15 @@
 # HumanResources.Shift
 
-**Schema**: HumanResources
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#shift)
+[Back to Top](#humanresourcesshift)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -17,7 +20,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#shift)
+[Back to Top](#humanresourcesshift)
 
 
 The sections that follow define:
@@ -25,32 +28,32 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `HumanResources.Shift`.
 
 ### Dependencies
-[Back to Top](#shift)
+[Back to Top](#humanresourcesshift)
 
 
 No dependencies defined
 
 ### Dependents
-[Back to Top](#shift)
+[Back to Top](#humanresourcesshift)
 
-**Table** refers to the table that defines a foreign key mapping to Shift.
+**Table** refers to the table that defines a foreign key mapping to HumanResources.Shift.
 
-**Primary Key** is the column in Shift that maps to **Foreign Key** in **Table**.
+**Primary Key** is the column in HumanResources.Shift that maps to **Foreign Key** in **Table**.
 
 Table | Primary Key | Foreign Key | Foreign Key Name
 ------|-------------|-------------|-----------------
 [HumanResources.EmployeeDepartmentHistory](./EmployeeDepartmentHistory.md) | `ShiftID` | `ShiftID` | **FK_EmployeeDepartmentHistory_Shift_ShiftID**
 
 ## Maps
-[Back to Top](#shift)
+[Back to Top](#humanresourcesshift)
 
 ### Dependency Map
-[Back to Top](#shift)
+[Back to Top](#humanresourcesshift)
 
-Shift has no dependencies
+HumanResources.Shift has no dependencies
 ### Dependent Map
-[Back to Top](#shift)
+[Back to Top](#humanresourcesshift)
 
-> The following is a distinct list of tables captured by recursively evaluating tables that list Shift as a foreign key dependency.
+> The following is a distinct list of tables captured by recursively evaluating tables that list HumanResources.Shift as a foreign key dependency.
 
 * [HumanResources.EmployeeDepartmentHistory](./EmployeeDepartmentHistory.md)

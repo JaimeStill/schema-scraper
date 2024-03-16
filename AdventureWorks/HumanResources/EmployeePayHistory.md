@@ -1,12 +1,15 @@
 # HumanResources.EmployeePayHistory
 
-**Schema**: HumanResources
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#employeepayhistory)
+[Back to Top](#humanresourcesemployeepayhistory)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -17,7 +20,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#employeepayhistory)
+[Back to Top](#humanresourcesemployeepayhistory)
 
 
 The sections that follow define:
@@ -25,7 +28,7 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `HumanResources.EmployeePayHistory`.
 
 ### Dependencies
-[Back to Top](#employeepayhistory)
+[Back to Top](#humanresourcesemployeepayhistory)
 
 
 **Table** refers to the table that the foreign key defined by `HumanResources.EmployeePayHistory` maps to.
@@ -36,22 +39,22 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [HumanResources.Employee](./Employee.md) | `BusinessEntityID` | `BusinessEntityID` | **FK_EmployeePayHistory_Employee_BusinessEntityID**
 
 ### Dependents
-[Back to Top](#employeepayhistory)
+[Back to Top](#humanresourcesemployeepayhistory)
 
 No dependencies defined
 
 ## Maps
-[Back to Top](#employeepayhistory)
+[Back to Top](#humanresourcesemployeepayhistory)
 
 ### Dependency Map
-[Back to Top](#employeepayhistory)
+[Back to Top](#humanresourcesemployeepayhistory)
 
-> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table EmployeePayHistory.
+> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table HumanResources.EmployeePayHistory.
 
 * [HumanResources.Employee](./Employee.md)
 * [Person.Person](../Person/Person.md)
 * [Person.BusinessEntity](./BusinessEntity.md)
 ### Dependent Map
-[Back to Top](#employeepayhistory)
+[Back to Top](#humanresourcesemployeepayhistory)
 
-EmployeePayHistory has no dependents
+HumanResources.EmployeePayHistory has no dependents

@@ -1,12 +1,15 @@
 # Sales.SalesReason
 
-**Schema**: Sales
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#salesreason)
+[Back to Top](#salessalesreason)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -16,7 +19,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#salesreason)
+[Back to Top](#salessalesreason)
 
 
 The sections that follow define:
@@ -24,32 +27,32 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Sales.SalesReason`.
 
 ### Dependencies
-[Back to Top](#salesreason)
+[Back to Top](#salessalesreason)
 
 
 No dependencies defined
 
 ### Dependents
-[Back to Top](#salesreason)
+[Back to Top](#salessalesreason)
 
-**Table** refers to the table that defines a foreign key mapping to SalesReason.
+**Table** refers to the table that defines a foreign key mapping to Sales.SalesReason.
 
-**Primary Key** is the column in SalesReason that maps to **Foreign Key** in **Table**.
+**Primary Key** is the column in Sales.SalesReason that maps to **Foreign Key** in **Table**.
 
 Table | Primary Key | Foreign Key | Foreign Key Name
 ------|-------------|-------------|-----------------
 [Sales.SalesOrderHeaderSalesReason](./SalesOrderHeaderSalesReason.md) | `SalesReasonID` | `SalesReasonID` | **FK_SalesOrderHeaderSalesReason_SalesReason_SalesReasonID**
 
 ## Maps
-[Back to Top](#salesreason)
+[Back to Top](#salessalesreason)
 
 ### Dependency Map
-[Back to Top](#salesreason)
+[Back to Top](#salessalesreason)
 
-SalesReason has no dependencies
+Sales.SalesReason has no dependencies
 ### Dependent Map
-[Back to Top](#salesreason)
+[Back to Top](#salessalesreason)
 
-> The following is a distinct list of tables captured by recursively evaluating tables that list SalesReason as a foreign key dependency.
+> The following is a distinct list of tables captured by recursively evaluating tables that list Sales.SalesReason as a foreign key dependency.
 
 * [Sales.SalesOrderHeaderSalesReason](./SalesOrderHeaderSalesReason.md)

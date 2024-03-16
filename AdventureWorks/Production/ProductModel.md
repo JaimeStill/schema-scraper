@@ -1,12 +1,15 @@
 # Production.ProductModel
 
-**Schema**: Production
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#productmodel)
+[Back to Top](#productionproductmodel)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -18,7 +21,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#productmodel)
+[Back to Top](#productionproductmodel)
 
 
 The sections that follow define:
@@ -26,17 +29,17 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Production.ProductModel`.
 
 ### Dependencies
-[Back to Top](#productmodel)
+[Back to Top](#productionproductmodel)
 
 
 No dependencies defined
 
 ### Dependents
-[Back to Top](#productmodel)
+[Back to Top](#productionproductmodel)
 
-**Table** refers to the table that defines a foreign key mapping to ProductModel.
+**Table** refers to the table that defines a foreign key mapping to Production.ProductModel.
 
-**Primary Key** is the column in ProductModel that maps to **Foreign Key** in **Table**.
+**Primary Key** is the column in Production.ProductModel that maps to **Foreign Key** in **Table**.
 
 Table | Primary Key | Foreign Key | Foreign Key Name
 ------|-------------|-------------|-----------------
@@ -45,16 +48,16 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Production.ProductModelProductDescriptionCulture](./ProductModelProductDescriptionCulture.md) | `ProductModelID` | `ProductModelID` | **FK_ProductModelProductDescriptionCulture_ProductModel_ProductModelID**
 
 ## Maps
-[Back to Top](#productmodel)
+[Back to Top](#productionproductmodel)
 
 ### Dependency Map
-[Back to Top](#productmodel)
+[Back to Top](#productionproductmodel)
 
-ProductModel has no dependencies
+Production.ProductModel has no dependencies
 ### Dependent Map
-[Back to Top](#productmodel)
+[Back to Top](#productionproductmodel)
 
-> The following is a distinct list of tables captured by recursively evaluating tables that list ProductModel as a foreign key dependency.
+> The following is a distinct list of tables captured by recursively evaluating tables that list Production.ProductModel as a foreign key dependency.
 
 * [Production.Product](./Product.md)
 * [Production.BillOfMaterials](./BillOfMaterials.md)

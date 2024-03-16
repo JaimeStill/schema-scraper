@@ -1,12 +1,15 @@
 # dbo.DatabaseLog
 
-**Schema**: dbo
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#databaselog)
+[Back to Top](#dbodatabaselog)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -20,7 +23,7 @@ Column | Type | Is Nullable
 **XmlEvent** | `xml` | False
 
 ## Relationships
-[Back to Top](#databaselog)
+[Back to Top](#dbodatabaselog)
 
 
 The sections that follow define:
@@ -28,24 +31,24 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `dbo.DatabaseLog`.
 
 ### Dependencies
-[Back to Top](#databaselog)
+[Back to Top](#dbodatabaselog)
 
 
 No dependencies defined
 
 ### Dependents
-[Back to Top](#databaselog)
+[Back to Top](#dbodatabaselog)
 
 No dependencies defined
 
 ## Maps
-[Back to Top](#databaselog)
+[Back to Top](#dbodatabaselog)
 
 ### Dependency Map
-[Back to Top](#databaselog)
+[Back to Top](#dbodatabaselog)
 
-DatabaseLog has no dependencies
+dbo.DatabaseLog has no dependencies
 ### Dependent Map
-[Back to Top](#databaselog)
+[Back to Top](#dbodatabaselog)
 
-DatabaseLog has no dependents
+dbo.DatabaseLog has no dependents

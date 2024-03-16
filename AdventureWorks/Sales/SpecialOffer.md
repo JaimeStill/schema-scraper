@@ -1,12 +1,15 @@
 # Sales.SpecialOffer
 
-**Schema**: Sales
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#specialoffer)
+[Back to Top](#salesspecialoffer)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -23,7 +26,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#specialoffer)
+[Back to Top](#salesspecialoffer)
 
 
 The sections that follow define:
@@ -31,33 +34,33 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Sales.SpecialOffer`.
 
 ### Dependencies
-[Back to Top](#specialoffer)
+[Back to Top](#salesspecialoffer)
 
 
 No dependencies defined
 
 ### Dependents
-[Back to Top](#specialoffer)
+[Back to Top](#salesspecialoffer)
 
-**Table** refers to the table that defines a foreign key mapping to SpecialOffer.
+**Table** refers to the table that defines a foreign key mapping to Sales.SpecialOffer.
 
-**Primary Key** is the column in SpecialOffer that maps to **Foreign Key** in **Table**.
+**Primary Key** is the column in Sales.SpecialOffer that maps to **Foreign Key** in **Table**.
 
 Table | Primary Key | Foreign Key | Foreign Key Name
 ------|-------------|-------------|-----------------
 [Sales.SpecialOfferProduct](./SpecialOfferProduct.md) | `SpecialOfferID` | `SpecialOfferID` | **FK_SpecialOfferProduct_SpecialOffer_SpecialOfferID**
 
 ## Maps
-[Back to Top](#specialoffer)
+[Back to Top](#salesspecialoffer)
 
 ### Dependency Map
-[Back to Top](#specialoffer)
+[Back to Top](#salesspecialoffer)
 
-SpecialOffer has no dependencies
+Sales.SpecialOffer has no dependencies
 ### Dependent Map
-[Back to Top](#specialoffer)
+[Back to Top](#salesspecialoffer)
 
-> The following is a distinct list of tables captured by recursively evaluating tables that list SpecialOffer as a foreign key dependency.
+> The following is a distinct list of tables captured by recursively evaluating tables that list Sales.SpecialOffer as a foreign key dependency.
 
 * [Sales.SpecialOfferProduct](./SpecialOfferProduct.md)
 * [Sales.SalesOrderDetail](./SalesOrderDetail.md)

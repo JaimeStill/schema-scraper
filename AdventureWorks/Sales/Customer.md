@@ -1,12 +1,15 @@
 # Sales.Customer
 
-**Schema**: Sales
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#customer)
+[Back to Top](#salescustomer)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -19,7 +22,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#customer)
+[Back to Top](#salescustomer)
 
 
 The sections that follow define:
@@ -27,7 +30,7 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Sales.Customer`.
 
 ### Dependencies
-[Back to Top](#customer)
+[Back to Top](#salescustomer)
 
 
 **Table** refers to the table that the foreign key defined by `Sales.Customer` maps to.
@@ -40,23 +43,23 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Sales.Store](./Store.md) | `BusinessEntityID` | `StoreID` | **FK_Customer_Store_StoreID**
 
 ### Dependents
-[Back to Top](#customer)
+[Back to Top](#salescustomer)
 
-**Table** refers to the table that defines a foreign key mapping to Customer.
+**Table** refers to the table that defines a foreign key mapping to Sales.Customer.
 
-**Primary Key** is the column in Customer that maps to **Foreign Key** in **Table**.
+**Primary Key** is the column in Sales.Customer that maps to **Foreign Key** in **Table**.
 
 Table | Primary Key | Foreign Key | Foreign Key Name
 ------|-------------|-------------|-----------------
 [Sales.SalesOrderHeader](./SalesOrderHeader.md) | `CustomerID` | `CustomerID` | **FK_SalesOrderHeader_Customer_CustomerID**
 
 ## Maps
-[Back to Top](#customer)
+[Back to Top](#salescustomer)
 
 ### Dependency Map
-[Back to Top](#customer)
+[Back to Top](#salescustomer)
 
-> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Customer.
+> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Sales.Customer.
 
 * [Person.Person](../Person/Person.md)
 * [Person.BusinessEntity](./BusinessEntity.md)
@@ -71,9 +74,9 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 * [Sales.SalesTerritory](./SalesTerritory.md)
 * [Person.CountryRegion](../Person/CountryRegion.md)
 ### Dependent Map
-[Back to Top](#customer)
+[Back to Top](#salescustomer)
 
-> The following is a distinct list of tables captured by recursively evaluating tables that list Customer as a foreign key dependency.
+> The following is a distinct list of tables captured by recursively evaluating tables that list Sales.Customer as a foreign key dependency.
 
 * [Sales.SalesOrderHeader](./SalesOrderHeader.md)
 * [Sales.SalesOrderDetail](./SalesOrderDetail.md)

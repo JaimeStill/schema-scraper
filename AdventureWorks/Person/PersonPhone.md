@@ -1,12 +1,15 @@
 # Person.PersonPhone
 
-**Schema**: Person
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#personphone)
+[Back to Top](#personpersonphone)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -16,7 +19,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#personphone)
+[Back to Top](#personpersonphone)
 
 
 The sections that follow define:
@@ -24,7 +27,7 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Person.PersonPhone`.
 
 ### Dependencies
-[Back to Top](#personphone)
+[Back to Top](#personpersonphone)
 
 
 **Table** refers to the table that the foreign key defined by `Person.PersonPhone` maps to.
@@ -36,22 +39,22 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Person.PhoneNumberType](./PhoneNumberType.md) | `PhoneNumberTypeID` | `PhoneNumberTypeID` | **FK_PersonPhone_PhoneNumberType_PhoneNumberTypeID**
 
 ### Dependents
-[Back to Top](#personphone)
+[Back to Top](#personpersonphone)
 
 No dependencies defined
 
 ## Maps
-[Back to Top](#personphone)
+[Back to Top](#personpersonphone)
 
 ### Dependency Map
-[Back to Top](#personphone)
+[Back to Top](#personpersonphone)
 
-> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table PersonPhone.
+> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Person.PersonPhone.
 
 * [Person.Person](./Person.md)
 * [Person.BusinessEntity](./BusinessEntity.md)
 * [Person.PhoneNumberType](./PhoneNumberType.md)
 ### Dependent Map
-[Back to Top](#personphone)
+[Back to Top](#personpersonphone)
 
-PersonPhone has no dependents
+Person.PersonPhone has no dependents

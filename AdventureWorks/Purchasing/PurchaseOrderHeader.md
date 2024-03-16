@@ -1,12 +1,15 @@
 # Purchasing.PurchaseOrderHeader
 
-**Schema**: Purchasing
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#purchaseorderheader)
+[Back to Top](#purchasingpurchaseorderheader)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -25,7 +28,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#purchaseorderheader)
+[Back to Top](#purchasingpurchaseorderheader)
 
 
 The sections that follow define:
@@ -33,7 +36,7 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Purchasing.PurchaseOrderHeader`.
 
 ### Dependencies
-[Back to Top](#purchaseorderheader)
+[Back to Top](#purchasingpurchaseorderheader)
 
 
 **Table** refers to the table that the foreign key defined by `Purchasing.PurchaseOrderHeader` maps to.
@@ -46,23 +49,23 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Purchasing.Vendor](./Vendor.md) | `BusinessEntityID` | `VendorID` | **FK_PurchaseOrderHeader_Vendor_VendorID**
 
 ### Dependents
-[Back to Top](#purchaseorderheader)
+[Back to Top](#purchasingpurchaseorderheader)
 
-**Table** refers to the table that defines a foreign key mapping to PurchaseOrderHeader.
+**Table** refers to the table that defines a foreign key mapping to Purchasing.PurchaseOrderHeader.
 
-**Primary Key** is the column in PurchaseOrderHeader that maps to **Foreign Key** in **Table**.
+**Primary Key** is the column in Purchasing.PurchaseOrderHeader that maps to **Foreign Key** in **Table**.
 
 Table | Primary Key | Foreign Key | Foreign Key Name
 ------|-------------|-------------|-----------------
 [Purchasing.PurchaseOrderDetail](./PurchaseOrderDetail.md) | `PurchaseOrderID` | `PurchaseOrderID` | **FK_PurchaseOrderDetail_PurchaseOrderHeader_PurchaseOrderID**
 
 ## Maps
-[Back to Top](#purchaseorderheader)
+[Back to Top](#purchasingpurchaseorderheader)
 
 ### Dependency Map
-[Back to Top](#purchaseorderheader)
+[Back to Top](#purchasingpurchaseorderheader)
 
-> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table PurchaseOrderHeader.
+> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Purchasing.PurchaseOrderHeader.
 
 * [HumanResources.Employee](../HumanResources/Employee.md)
 * [Person.Person](../Person/Person.md)
@@ -71,8 +74,8 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 * [Purchasing.Vendor](./Vendor.md)
 * [Person.BusinessEntity](../Person/BusinessEntity.md)
 ### Dependent Map
-[Back to Top](#purchaseorderheader)
+[Back to Top](#purchasingpurchaseorderheader)
 
-> The following is a distinct list of tables captured by recursively evaluating tables that list PurchaseOrderHeader as a foreign key dependency.
+> The following is a distinct list of tables captured by recursively evaluating tables that list Purchasing.PurchaseOrderHeader as a foreign key dependency.
 
 * [Purchasing.PurchaseOrderDetail](./PurchaseOrderDetail.md)

@@ -1,12 +1,15 @@
 # dbo.AWBuildVersion
 
-**Schema**: dbo
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#awbuildversion)
+[Back to Top](#dboawbuildversion)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -16,7 +19,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#awbuildversion)
+[Back to Top](#dboawbuildversion)
 
 
 The sections that follow define:
@@ -24,24 +27,24 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `dbo.AWBuildVersion`.
 
 ### Dependencies
-[Back to Top](#awbuildversion)
+[Back to Top](#dboawbuildversion)
 
 
 No dependencies defined
 
 ### Dependents
-[Back to Top](#awbuildversion)
+[Back to Top](#dboawbuildversion)
 
 No dependencies defined
 
 ## Maps
-[Back to Top](#awbuildversion)
+[Back to Top](#dboawbuildversion)
 
 ### Dependency Map
-[Back to Top](#awbuildversion)
+[Back to Top](#dboawbuildversion)
 
-AWBuildVersion has no dependencies
+dbo.AWBuildVersion has no dependencies
 ### Dependent Map
-[Back to Top](#awbuildversion)
+[Back to Top](#dboawbuildversion)
 
-AWBuildVersion has no dependents
+dbo.AWBuildVersion has no dependents

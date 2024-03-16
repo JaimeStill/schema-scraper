@@ -1,12 +1,15 @@
 # Person.Person
 
-**Schema**: Person
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#person)
+[Back to Top](#personperson)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -25,7 +28,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#person)
+[Back to Top](#personperson)
 
 
 The sections that follow define:
@@ -33,7 +36,7 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Person.Person`.
 
 ### Dependencies
-[Back to Top](#person)
+[Back to Top](#personperson)
 
 
 **Table** refers to the table that the foreign key defined by `Person.Person` maps to.
@@ -44,11 +47,11 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Person.BusinessEntity](./BusinessEntity.md) | `BusinessEntityID` | `BusinessEntityID` | **FK_Person_BusinessEntity_BusinessEntityID**
 
 ### Dependents
-[Back to Top](#person)
+[Back to Top](#personperson)
 
-**Table** refers to the table that defines a foreign key mapping to Person.
+**Table** refers to the table that defines a foreign key mapping to Person.Person.
 
-**Primary Key** is the column in Person that maps to **Foreign Key** in **Table**.
+**Primary Key** is the column in Person.Person that maps to **Foreign Key** in **Table**.
 
 Table | Primary Key | Foreign Key | Foreign Key Name
 ------|-------------|-------------|-----------------
@@ -61,18 +64,18 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Sales.PersonCreditCard](../Sales/PersonCreditCard.md) | `BusinessEntityID` | `BusinessEntityID` | **FK_PersonCreditCard_Person_BusinessEntityID**
 
 ## Maps
-[Back to Top](#person)
+[Back to Top](#personperson)
 
 ### Dependency Map
-[Back to Top](#person)
+[Back to Top](#personperson)
 
-> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Person.
+> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Person.Person.
 
 * [Person.BusinessEntity](./BusinessEntity.md)
 ### Dependent Map
-[Back to Top](#person)
+[Back to Top](#personperson)
 
-> The following is a distinct list of tables captured by recursively evaluating tables that list Person as a foreign key dependency.
+> The following is a distinct list of tables captured by recursively evaluating tables that list Person.Person as a foreign key dependency.
 
 * [HumanResources.Employee](../HumanResources/Employee.md)
 * [HumanResources.EmployeeDepartmentHistory](./EmployeeDepartmentHistory.md)

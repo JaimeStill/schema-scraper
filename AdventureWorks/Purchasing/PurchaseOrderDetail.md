@@ -1,12 +1,15 @@
 # Purchasing.PurchaseOrderDetail
 
-**Schema**: Purchasing
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#purchaseorderdetail)
+[Back to Top](#purchasingpurchaseorderdetail)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -23,7 +26,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#purchaseorderdetail)
+[Back to Top](#purchasingpurchaseorderdetail)
 
 
 The sections that follow define:
@@ -31,7 +34,7 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Purchasing.PurchaseOrderDetail`.
 
 ### Dependencies
-[Back to Top](#purchaseorderdetail)
+[Back to Top](#purchasingpurchaseorderdetail)
 
 
 **Table** refers to the table that the foreign key defined by `Purchasing.PurchaseOrderDetail` maps to.
@@ -43,17 +46,17 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Purchasing.PurchaseOrderHeader](./PurchaseOrderHeader.md) | `PurchaseOrderID` | `PurchaseOrderID` | **FK_PurchaseOrderDetail_PurchaseOrderHeader_PurchaseOrderID**
 
 ### Dependents
-[Back to Top](#purchaseorderdetail)
+[Back to Top](#purchasingpurchaseorderdetail)
 
 No dependencies defined
 
 ## Maps
-[Back to Top](#purchaseorderdetail)
+[Back to Top](#purchasingpurchaseorderdetail)
 
 ### Dependency Map
-[Back to Top](#purchaseorderdetail)
+[Back to Top](#purchasingpurchaseorderdetail)
 
-> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table PurchaseOrderDetail.
+> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Purchasing.PurchaseOrderDetail.
 
 * [Production.Product](../Production/Product.md)
 * [Production.ProductModel](./ProductModel.md)
@@ -68,6 +71,6 @@ No dependencies defined
 * [Purchasing.Vendor](./Vendor.md)
 * [Person.BusinessEntity](../Person/BusinessEntity.md)
 ### Dependent Map
-[Back to Top](#purchaseorderdetail)
+[Back to Top](#purchasingpurchaseorderdetail)
 
-PurchaseOrderDetail has no dependents
+Purchasing.PurchaseOrderDetail has no dependents

@@ -1,12 +1,15 @@
 # Purchasing.ProductVendor
 
-**Schema**: Purchasing
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#productvendor)
+[Back to Top](#purchasingproductvendor)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -23,7 +26,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#productvendor)
+[Back to Top](#purchasingproductvendor)
 
 
 The sections that follow define:
@@ -31,7 +34,7 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Purchasing.ProductVendor`.
 
 ### Dependencies
-[Back to Top](#productvendor)
+[Back to Top](#purchasingproductvendor)
 
 
 **Table** refers to the table that the foreign key defined by `Purchasing.ProductVendor` maps to.
@@ -44,17 +47,17 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Purchasing.Vendor](./Vendor.md) | `BusinessEntityID` | `BusinessEntityID` | **FK_ProductVendor_Vendor_BusinessEntityID**
 
 ### Dependents
-[Back to Top](#productvendor)
+[Back to Top](#purchasingproductvendor)
 
 No dependencies defined
 
 ## Maps
-[Back to Top](#productvendor)
+[Back to Top](#purchasingproductvendor)
 
 ### Dependency Map
-[Back to Top](#productvendor)
+[Back to Top](#purchasingproductvendor)
 
-> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table ProductVendor.
+> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Purchasing.ProductVendor.
 
 * [Production.Product](../Production/Product.md)
 * [Production.ProductModel](./ProductModel.md)
@@ -65,6 +68,6 @@ No dependencies defined
 * [Purchasing.Vendor](./Vendor.md)
 * [Person.BusinessEntity](../Person/BusinessEntity.md)
 ### Dependent Map
-[Back to Top](#productvendor)
+[Back to Top](#purchasingproductvendor)
 
-ProductVendor has no dependents
+Purchasing.ProductVendor has no dependents

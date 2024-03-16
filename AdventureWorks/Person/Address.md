@@ -1,12 +1,15 @@
 # Person.Address
 
-**Schema**: Person
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#address)
+[Back to Top](#personaddress)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -21,7 +24,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#address)
+[Back to Top](#personaddress)
 
 
 The sections that follow define:
@@ -29,7 +32,7 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Person.Address`.
 
 ### Dependencies
-[Back to Top](#address)
+[Back to Top](#personaddress)
 
 
 **Table** refers to the table that the foreign key defined by `Person.Address` maps to.
@@ -40,11 +43,11 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Person.StateProvince](./StateProvince.md) | `StateProvinceID` | `StateProvinceID` | **FK_Address_StateProvince_StateProvinceID**
 
 ### Dependents
-[Back to Top](#address)
+[Back to Top](#personaddress)
 
-**Table** refers to the table that defines a foreign key mapping to Address.
+**Table** refers to the table that defines a foreign key mapping to Person.Address.
 
-**Primary Key** is the column in Address that maps to **Foreign Key** in **Table**.
+**Primary Key** is the column in Person.Address that maps to **Foreign Key** in **Table**.
 
 Table | Primary Key | Foreign Key | Foreign Key Name
 ------|-------------|-------------|-----------------
@@ -53,21 +56,21 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Sales.SalesOrderHeader](../Sales/SalesOrderHeader.md) | `AddressID` | `ShipToAddressID` | **FK_SalesOrderHeader_Address_ShipToAddressID**
 
 ## Maps
-[Back to Top](#address)
+[Back to Top](#personaddress)
 
 ### Dependency Map
-[Back to Top](#address)
+[Back to Top](#personaddress)
 
-> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Address.
+> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Person.Address.
 
 * [Person.StateProvince](./StateProvince.md)
 * [Person.CountryRegion](./CountryRegion.md)
 * [Sales.SalesTerritory](../Sales/SalesTerritory.md)
 * [Person.CountryRegion](../Person/CountryRegion.md)
 ### Dependent Map
-[Back to Top](#address)
+[Back to Top](#personaddress)
 
-> The following is a distinct list of tables captured by recursively evaluating tables that list Address as a foreign key dependency.
+> The following is a distinct list of tables captured by recursively evaluating tables that list Person.Address as a foreign key dependency.
 
 * [Person.BusinessEntityAddress](./BusinessEntityAddress.md)
 * [Sales.SalesOrderHeader](../Sales/SalesOrderHeader.md)

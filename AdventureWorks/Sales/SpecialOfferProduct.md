@@ -1,12 +1,15 @@
 # Sales.SpecialOfferProduct
 
-**Schema**: Sales
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#specialofferproduct)
+[Back to Top](#salesspecialofferproduct)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -16,7 +19,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#specialofferproduct)
+[Back to Top](#salesspecialofferproduct)
 
 
 The sections that follow define:
@@ -24,7 +27,7 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Sales.SpecialOfferProduct`.
 
 ### Dependencies
-[Back to Top](#specialofferproduct)
+[Back to Top](#salesspecialofferproduct)
 
 
 **Table** refers to the table that the foreign key defined by `Sales.SpecialOfferProduct` maps to.
@@ -36,11 +39,11 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Sales.SpecialOffer](./SpecialOffer.md) | `SpecialOfferID` | `SpecialOfferID` | **FK_SpecialOfferProduct_SpecialOffer_SpecialOfferID**
 
 ### Dependents
-[Back to Top](#specialofferproduct)
+[Back to Top](#salesspecialofferproduct)
 
-**Table** refers to the table that defines a foreign key mapping to SpecialOfferProduct.
+**Table** refers to the table that defines a foreign key mapping to Sales.SpecialOfferProduct.
 
-**Primary Key** is the column in SpecialOfferProduct that maps to **Foreign Key** in **Table**.
+**Primary Key** is the column in Sales.SpecialOfferProduct that maps to **Foreign Key** in **Table**.
 
 Table | Primary Key | Foreign Key | Foreign Key Name
 ------|-------------|-------------|-----------------
@@ -48,12 +51,12 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Sales.SalesOrderDetail](./SalesOrderDetail.md) | `ProductID` | `ProductID` | **FK_SalesOrderDetail_SpecialOfferProduct_SpecialOfferIDProductID**
 
 ## Maps
-[Back to Top](#specialofferproduct)
+[Back to Top](#salesspecialofferproduct)
 
 ### Dependency Map
-[Back to Top](#specialofferproduct)
+[Back to Top](#salesspecialofferproduct)
 
-> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table SpecialOfferProduct.
+> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Sales.SpecialOfferProduct.
 
 * [Production.Product](../Production/Product.md)
 * [Production.ProductModel](./ProductModel.md)
@@ -62,8 +65,8 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 * [Production.UnitMeasure](./UnitMeasure.md)
 * [Sales.SpecialOffer](./SpecialOffer.md)
 ### Dependent Map
-[Back to Top](#specialofferproduct)
+[Back to Top](#salesspecialofferproduct)
 
-> The following is a distinct list of tables captured by recursively evaluating tables that list SpecialOfferProduct as a foreign key dependency.
+> The following is a distinct list of tables captured by recursively evaluating tables that list Sales.SpecialOfferProduct as a foreign key dependency.
 
 * [Sales.SalesOrderDetail](./SalesOrderDetail.md)

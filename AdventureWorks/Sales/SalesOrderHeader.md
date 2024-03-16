@@ -1,12 +1,15 @@
 # Sales.SalesOrderHeader
 
-**Schema**: Sales
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#salesorderheader)
+[Back to Top](#salessalesorderheader)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -38,7 +41,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#salesorderheader)
+[Back to Top](#salessalesorderheader)
 
 
 The sections that follow define:
@@ -46,7 +49,7 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Sales.SalesOrderHeader`.
 
 ### Dependencies
-[Back to Top](#salesorderheader)
+[Back to Top](#salessalesorderheader)
 
 
 **Table** refers to the table that the foreign key defined by `Sales.SalesOrderHeader` maps to.
@@ -64,11 +67,11 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Sales.SalesTerritory](./SalesTerritory.md) | `TerritoryID` | `TerritoryID` | **FK_SalesOrderHeader_SalesTerritory_TerritoryID**
 
 ### Dependents
-[Back to Top](#salesorderheader)
+[Back to Top](#salessalesorderheader)
 
-**Table** refers to the table that defines a foreign key mapping to SalesOrderHeader.
+**Table** refers to the table that defines a foreign key mapping to Sales.SalesOrderHeader.
 
-**Primary Key** is the column in SalesOrderHeader that maps to **Foreign Key** in **Table**.
+**Primary Key** is the column in Sales.SalesOrderHeader that maps to **Foreign Key** in **Table**.
 
 Table | Primary Key | Foreign Key | Foreign Key Name
 ------|-------------|-------------|-----------------
@@ -76,12 +79,12 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Sales.SalesOrderHeaderSalesReason](./SalesOrderHeaderSalesReason.md) | `SalesOrderID` | `SalesOrderID` | **FK_SalesOrderHeaderSalesReason_SalesOrderHeader_SalesOrderID**
 
 ## Maps
-[Back to Top](#salesorderheader)
+[Back to Top](#salessalesorderheader)
 
 ### Dependency Map
-[Back to Top](#salesorderheader)
+[Back to Top](#salessalesorderheader)
 
-> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table SalesOrderHeader.
+> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Sales.SalesOrderHeader.
 
 * [Person.Address](../Person/Address.md)
 * [Person.StateProvince](./StateProvince.md)
@@ -114,9 +117,9 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 * [Sales.SalesTerritory](./SalesTerritory.md)
 * [Person.CountryRegion](../Person/CountryRegion.md)
 ### Dependent Map
-[Back to Top](#salesorderheader)
+[Back to Top](#salessalesorderheader)
 
-> The following is a distinct list of tables captured by recursively evaluating tables that list SalesOrderHeader as a foreign key dependency.
+> The following is a distinct list of tables captured by recursively evaluating tables that list Sales.SalesOrderHeader as a foreign key dependency.
 
 * [Sales.SalesOrderDetail](./SalesOrderDetail.md)
 * [Sales.SalesOrderHeaderSalesReason](./SalesOrderHeaderSalesReason.md)

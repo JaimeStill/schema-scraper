@@ -70,10 +70,13 @@ public class ScraperWriter(string root, Connector connector)
     {
         writer.WriteLine($"# {table}");
         writer.WriteLine();
-        writer.WriteLine($"**Schema**: `{table.Schema}`");
         writer.WriteLine("* [Columns](#columns)");
         writer.WriteLine("* [Relationships](#relationships)");
-        writer.WriteLine("* [Dependency Map](#dependency-map)");
+        writer.WriteLine("    * [Dependencies](#dependencies)");
+        writer.WriteLine("    * [Dependents](#dependents)");
+        writer.WriteLine("* [Maps](#maps)");
+        writer.WriteLine("    * [Dependency Map](#dependency-map)");
+        writer.WriteLine("    * [Dependent Map](#dependent-map)");
         writer.WriteLine();
     }
 
@@ -86,7 +89,7 @@ public class ScraperWriter(string root, Connector connector)
         Console.WriteLine($"Generating column metadata for {table}");
 
         List<ScraperColumn> columns = await query.QueryColumns(table.Table);
-        InitializeColumns(writer, columns, table.Table);
+        InitializeColumns(writer, table, columns);
 
         foreach (ScraperColumn column in columns)
             writer.WriteLine(
@@ -96,7 +99,7 @@ public class ScraperWriter(string root, Connector connector)
         writer.WriteLine();
     }
 
-    static void InitializeColumns(StreamWriter writer, List<ScraperColumn> columns, string table)
+    static void InitializeColumns(StreamWriter writer, ScraperTable table, List<ScraperColumn> columns)
     {
         FormatHeader(writer, "Columns", table);
 
@@ -130,7 +133,7 @@ public class ScraperWriter(string root, Connector connector)
 
     static void InitializeRelationships(StreamWriter writer, ScraperTable table)
     {
-        FormatHeader(writer, "Relationships", table.Table);
+        FormatHeader(writer, "Relationships", table);
         writer.WriteLine();
         writer.WriteLine(
             "The sections that follow define:"
@@ -153,7 +156,7 @@ public class ScraperWriter(string root, Connector connector)
     async Task GenerateDependencies(StreamWriter writer, ScraperTable table)
     {
         List<ScraperRelationship> deps = await query.QueryDependencies(table.Table);
-        InitializeDependencies(writer, deps, table);
+        InitializeDependencies(writer, table, deps);
 
         foreach (ScraperRelationship dep in deps)
             writer.WriteLine(
@@ -163,9 +166,9 @@ public class ScraperWriter(string root, Connector connector)
         writer.WriteLine();
     }
 
-    static void InitializeDependencies(StreamWriter writer, List<ScraperRelationship> deps, ScraperTable table)
+    static void InitializeDependencies(StreamWriter writer, ScraperTable table, List<ScraperRelationship> deps)
     {
-        FormatHeader(writer, "Dependencies", table.Table, "###");
+        FormatHeader(writer, "Dependencies", table, "###");
 
         writer.WriteLine();
 
@@ -202,7 +205,7 @@ public class ScraperWriter(string root, Connector connector)
     async Task GenerateDependents(StreamWriter writer, ScraperTable table)
     {
         List<ScraperRelationship> deps = await query.QueryDependents(table.Table);
-        InitializeDependents(writer, deps, table.Table);
+        InitializeDependents(writer, table, deps);
 
         foreach (ScraperRelationship dep in deps)
             writer.WriteLine(
@@ -212,7 +215,7 @@ public class ScraperWriter(string root, Connector connector)
         writer.WriteLine();
     }
 
-    static void InitializeDependents(StreamWriter writer, List<ScraperRelationship> deps, string table)
+    static void InitializeDependents(StreamWriter writer, ScraperTable table, List<ScraperRelationship> deps)
     {
         FormatHeader(writer, "Dependents", table, "###");
 
@@ -253,7 +256,7 @@ public class ScraperWriter(string root, Connector connector)
     async Task GenerateMaps(StreamWriter writer, ScraperTable table)
     {
         Console.WriteLine($"Generating map metadata for {table}");
-        FormatHeader(writer, "Maps", table.Table);
+        FormatHeader(writer, "Maps", table);
         await GenerateDependencyMap(writer, table);
         await GenerateDependentMap(writer, table);
     }
@@ -263,13 +266,13 @@ public class ScraperWriter(string root, Connector connector)
     async Task GenerateDependencyMap(StreamWriter writer, ScraperTable table)
     {
         bool hasMap = (await query.MapDependencies(table.Table)).Count > 0;
-        InitializeDependencyMap(writer, table.Table, hasMap);
+        InitializeDependencyMap(writer, table, hasMap);
 
         if (hasMap)
             await WriteDependencyMap(writer, table, [table]);
     }
 
-    static void InitializeDependencyMap(StreamWriter writer, string table, bool hasMap)
+    static void InitializeDependencyMap(StreamWriter writer, ScraperTable table, bool hasMap)
     {
         FormatHeader(writer, "Dependency Map", table, "###");
 
@@ -311,13 +314,13 @@ public class ScraperWriter(string root, Connector connector)
     async Task GenerateDependentMap(StreamWriter writer, ScraperTable table)
     {
         bool hasMap = (await query.MapDependents(table.Table)).Count > 0;
-        InitializeDependentMap(writer, table.Table, hasMap);
+        InitializeDependentMap(writer, table, hasMap);
 
         if (hasMap)
             await WriteDependentMap(writer, table, [table]);
     }
 
-    static void InitializeDependentMap(StreamWriter writer, string table, bool hasMap)
+    static void InitializeDependentMap(StreamWriter writer, ScraperTable table, bool hasMap)
     {
         FormatHeader(writer, "Dependent Map", table, "###");
 
@@ -392,10 +395,10 @@ public class ScraperWriter(string root, Connector connector)
 
     #region Formatting
 
-    static void FormatHeader(StreamWriter writer, string header, string table, string level = "##")
+    static void FormatHeader(StreamWriter writer, string header, ScraperTable table, string level = "##")
     {
         writer.WriteLine($"{level} {header}");
-        writer.WriteLine($"[Back to Top](#{table.ToLower()})");
+        writer.WriteLine($"[Back to Top](#{table.ToString().ToLower().Replace(".", string.Empty)})");
         writer.WriteLine();
     }
 

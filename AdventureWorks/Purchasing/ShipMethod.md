@@ -1,12 +1,15 @@
 # Purchasing.ShipMethod
 
-**Schema**: Purchasing
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#shipmethod)
+[Back to Top](#purchasingshipmethod)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -18,7 +21,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#shipmethod)
+[Back to Top](#purchasingshipmethod)
 
 
 The sections that follow define:
@@ -26,17 +29,17 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Purchasing.ShipMethod`.
 
 ### Dependencies
-[Back to Top](#shipmethod)
+[Back to Top](#purchasingshipmethod)
 
 
 No dependencies defined
 
 ### Dependents
-[Back to Top](#shipmethod)
+[Back to Top](#purchasingshipmethod)
 
-**Table** refers to the table that defines a foreign key mapping to ShipMethod.
+**Table** refers to the table that defines a foreign key mapping to Purchasing.ShipMethod.
 
-**Primary Key** is the column in ShipMethod that maps to **Foreign Key** in **Table**.
+**Primary Key** is the column in Purchasing.ShipMethod that maps to **Foreign Key** in **Table**.
 
 Table | Primary Key | Foreign Key | Foreign Key Name
 ------|-------------|-------------|-----------------
@@ -44,16 +47,16 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Sales.SalesOrderHeader](../Sales/SalesOrderHeader.md) | `ShipMethodID` | `ShipMethodID` | **FK_SalesOrderHeader_ShipMethod_ShipMethodID**
 
 ## Maps
-[Back to Top](#shipmethod)
+[Back to Top](#purchasingshipmethod)
 
 ### Dependency Map
-[Back to Top](#shipmethod)
+[Back to Top](#purchasingshipmethod)
 
-ShipMethod has no dependencies
+Purchasing.ShipMethod has no dependencies
 ### Dependent Map
-[Back to Top](#shipmethod)
+[Back to Top](#purchasingshipmethod)
 
-> The following is a distinct list of tables captured by recursively evaluating tables that list ShipMethod as a foreign key dependency.
+> The following is a distinct list of tables captured by recursively evaluating tables that list Purchasing.ShipMethod as a foreign key dependency.
 
 * [Purchasing.PurchaseOrderHeader](./PurchaseOrderHeader.md)
 * [Purchasing.PurchaseOrderDetail](./PurchaseOrderDetail.md)

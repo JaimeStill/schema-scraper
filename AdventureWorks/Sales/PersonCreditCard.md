@@ -1,12 +1,15 @@
 # Sales.PersonCreditCard
 
-**Schema**: Sales
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#personcreditcard)
+[Back to Top](#salespersoncreditcard)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -15,7 +18,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#personcreditcard)
+[Back to Top](#salespersoncreditcard)
 
 
 The sections that follow define:
@@ -23,7 +26,7 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Sales.PersonCreditCard`.
 
 ### Dependencies
-[Back to Top](#personcreditcard)
+[Back to Top](#salespersoncreditcard)
 
 
 **Table** refers to the table that the foreign key defined by `Sales.PersonCreditCard` maps to.
@@ -35,22 +38,22 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Sales.CreditCard](./CreditCard.md) | `CreditCardID` | `CreditCardID` | **FK_PersonCreditCard_CreditCard_CreditCardID**
 
 ### Dependents
-[Back to Top](#personcreditcard)
+[Back to Top](#salespersoncreditcard)
 
 No dependencies defined
 
 ## Maps
-[Back to Top](#personcreditcard)
+[Back to Top](#salespersoncreditcard)
 
 ### Dependency Map
-[Back to Top](#personcreditcard)
+[Back to Top](#salespersoncreditcard)
 
-> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table PersonCreditCard.
+> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Sales.PersonCreditCard.
 
 * [Person.Person](../Person/Person.md)
 * [Person.BusinessEntity](./BusinessEntity.md)
 * [Sales.CreditCard](./CreditCard.md)
 ### Dependent Map
-[Back to Top](#personcreditcard)
+[Back to Top](#salespersoncreditcard)
 
-PersonCreditCard has no dependents
+Sales.PersonCreditCard has no dependents

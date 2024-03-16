@@ -1,12 +1,15 @@
 # Person.StateProvince
 
-**Schema**: Person
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#stateprovince)
+[Back to Top](#personstateprovince)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -20,7 +23,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#stateprovince)
+[Back to Top](#personstateprovince)
 
 
 The sections that follow define:
@@ -28,7 +31,7 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Person.StateProvince`.
 
 ### Dependencies
-[Back to Top](#stateprovince)
+[Back to Top](#personstateprovince)
 
 
 **Table** refers to the table that the foreign key defined by `Person.StateProvince` maps to.
@@ -40,11 +43,11 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Sales.SalesTerritory](../Sales/SalesTerritory.md) | `TerritoryID` | `TerritoryID` | **FK_StateProvince_SalesTerritory_TerritoryID**
 
 ### Dependents
-[Back to Top](#stateprovince)
+[Back to Top](#personstateprovince)
 
-**Table** refers to the table that defines a foreign key mapping to StateProvince.
+**Table** refers to the table that defines a foreign key mapping to Person.StateProvince.
 
-**Primary Key** is the column in StateProvince that maps to **Foreign Key** in **Table**.
+**Primary Key** is the column in Person.StateProvince that maps to **Foreign Key** in **Table**.
 
 Table | Primary Key | Foreign Key | Foreign Key Name
 ------|-------------|-------------|-----------------
@@ -52,20 +55,20 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Sales.SalesTaxRate](../Sales/SalesTaxRate.md) | `StateProvinceID` | `StateProvinceID` | **FK_SalesTaxRate_StateProvince_StateProvinceID**
 
 ## Maps
-[Back to Top](#stateprovince)
+[Back to Top](#personstateprovince)
 
 ### Dependency Map
-[Back to Top](#stateprovince)
+[Back to Top](#personstateprovince)
 
-> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table StateProvince.
+> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Person.StateProvince.
 
 * [Person.CountryRegion](./CountryRegion.md)
 * [Sales.SalesTerritory](../Sales/SalesTerritory.md)
 * [Person.CountryRegion](../Person/CountryRegion.md)
 ### Dependent Map
-[Back to Top](#stateprovince)
+[Back to Top](#personstateprovince)
 
-> The following is a distinct list of tables captured by recursively evaluating tables that list StateProvince as a foreign key dependency.
+> The following is a distinct list of tables captured by recursively evaluating tables that list Person.StateProvince as a foreign key dependency.
 
 * [Person.Address](./Address.md)
 * [Person.BusinessEntityAddress](./BusinessEntityAddress.md)

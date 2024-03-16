@@ -1,12 +1,15 @@
 # Sales.ShoppingCartItem
 
-**Schema**: Sales
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#shoppingcartitem)
+[Back to Top](#salesshoppingcartitem)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -18,7 +21,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#shoppingcartitem)
+[Back to Top](#salesshoppingcartitem)
 
 
 The sections that follow define:
@@ -26,7 +29,7 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Sales.ShoppingCartItem`.
 
 ### Dependencies
-[Back to Top](#shoppingcartitem)
+[Back to Top](#salesshoppingcartitem)
 
 
 **Table** refers to the table that the foreign key defined by `Sales.ShoppingCartItem` maps to.
@@ -37,17 +40,17 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Production.Product](../Production/Product.md) | `ProductID` | `ProductID` | **FK_ShoppingCartItem_Product_ProductID**
 
 ### Dependents
-[Back to Top](#shoppingcartitem)
+[Back to Top](#salesshoppingcartitem)
 
 No dependencies defined
 
 ## Maps
-[Back to Top](#shoppingcartitem)
+[Back to Top](#salesshoppingcartitem)
 
 ### Dependency Map
-[Back to Top](#shoppingcartitem)
+[Back to Top](#salesshoppingcartitem)
 
-> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table ShoppingCartItem.
+> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Sales.ShoppingCartItem.
 
 * [Production.Product](../Production/Product.md)
 * [Production.ProductModel](./ProductModel.md)
@@ -55,6 +58,6 @@ No dependencies defined
 * [Production.ProductCategory](./ProductCategory.md)
 * [Production.UnitMeasure](./UnitMeasure.md)
 ### Dependent Map
-[Back to Top](#shoppingcartitem)
+[Back to Top](#salesshoppingcartitem)
 
-ShoppingCartItem has no dependents
+Sales.ShoppingCartItem has no dependents

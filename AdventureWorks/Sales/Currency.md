@@ -1,12 +1,15 @@
 # Sales.Currency
 
-**Schema**: Sales
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#currency)
+[Back to Top](#salescurrency)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -15,7 +18,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#currency)
+[Back to Top](#salescurrency)
 
 
 The sections that follow define:
@@ -23,17 +26,17 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Sales.Currency`.
 
 ### Dependencies
-[Back to Top](#currency)
+[Back to Top](#salescurrency)
 
 
 No dependencies defined
 
 ### Dependents
-[Back to Top](#currency)
+[Back to Top](#salescurrency)
 
-**Table** refers to the table that defines a foreign key mapping to Currency.
+**Table** refers to the table that defines a foreign key mapping to Sales.Currency.
 
-**Primary Key** is the column in Currency that maps to **Foreign Key** in **Table**.
+**Primary Key** is the column in Sales.Currency that maps to **Foreign Key** in **Table**.
 
 Table | Primary Key | Foreign Key | Foreign Key Name
 ------|-------------|-------------|-----------------
@@ -42,16 +45,16 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Sales.CurrencyRate](./CurrencyRate.md) | `CurrencyCode` | `ToCurrencyCode` | **FK_CurrencyRate_Currency_ToCurrencyCode**
 
 ## Maps
-[Back to Top](#currency)
+[Back to Top](#salescurrency)
 
 ### Dependency Map
-[Back to Top](#currency)
+[Back to Top](#salescurrency)
 
-Currency has no dependencies
+Sales.Currency has no dependencies
 ### Dependent Map
-[Back to Top](#currency)
+[Back to Top](#salescurrency)
 
-> The following is a distinct list of tables captured by recursively evaluating tables that list Currency as a foreign key dependency.
+> The following is a distinct list of tables captured by recursively evaluating tables that list Sales.Currency as a foreign key dependency.
 
 * [Sales.CountryRegionCurrency](./CountryRegionCurrency.md)
 * [Sales.CurrencyRate](./CurrencyRate.md)

@@ -1,12 +1,15 @@
 # Production.ProductCategory
 
-**Schema**: Production
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#productcategory)
+[Back to Top](#productionproductcategory)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -16,7 +19,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#productcategory)
+[Back to Top](#productionproductcategory)
 
 
 The sections that follow define:
@@ -24,33 +27,33 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Production.ProductCategory`.
 
 ### Dependencies
-[Back to Top](#productcategory)
+[Back to Top](#productionproductcategory)
 
 
 No dependencies defined
 
 ### Dependents
-[Back to Top](#productcategory)
+[Back to Top](#productionproductcategory)
 
-**Table** refers to the table that defines a foreign key mapping to ProductCategory.
+**Table** refers to the table that defines a foreign key mapping to Production.ProductCategory.
 
-**Primary Key** is the column in ProductCategory that maps to **Foreign Key** in **Table**.
+**Primary Key** is the column in Production.ProductCategory that maps to **Foreign Key** in **Table**.
 
 Table | Primary Key | Foreign Key | Foreign Key Name
 ------|-------------|-------------|-----------------
 [Production.ProductSubcategory](./ProductSubcategory.md) | `ProductCategoryID` | `ProductCategoryID` | **FK_ProductSubcategory_ProductCategory_ProductCategoryID**
 
 ## Maps
-[Back to Top](#productcategory)
+[Back to Top](#productionproductcategory)
 
 ### Dependency Map
-[Back to Top](#productcategory)
+[Back to Top](#productionproductcategory)
 
-ProductCategory has no dependencies
+Production.ProductCategory has no dependencies
 ### Dependent Map
-[Back to Top](#productcategory)
+[Back to Top](#productionproductcategory)
 
-> The following is a distinct list of tables captured by recursively evaluating tables that list ProductCategory as a foreign key dependency.
+> The following is a distinct list of tables captured by recursively evaluating tables that list Production.ProductCategory as a foreign key dependency.
 
 * [Production.ProductSubcategory](./ProductSubcategory.md)
 * [Production.Product](./Product.md)

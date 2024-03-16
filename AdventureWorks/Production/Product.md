@@ -1,12 +1,15 @@
 # Production.Product
 
-**Schema**: Production
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#product)
+[Back to Top](#productionproduct)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -37,7 +40,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#product)
+[Back to Top](#productionproduct)
 
 
 The sections that follow define:
@@ -45,7 +48,7 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Production.Product`.
 
 ### Dependencies
-[Back to Top](#product)
+[Back to Top](#productionproduct)
 
 
 **Table** refers to the table that the foreign key defined by `Production.Product` maps to.
@@ -59,11 +62,11 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Production.UnitMeasure](./UnitMeasure.md) | `UnitMeasureCode` | `WeightUnitMeasureCode` | **FK_Product_UnitMeasure_WeightUnitMeasureCode**
 
 ### Dependents
-[Back to Top](#product)
+[Back to Top](#productionproduct)
 
-**Table** refers to the table that defines a foreign key mapping to Product.
+**Table** refers to the table that defines a foreign key mapping to Production.Product.
 
-**Primary Key** is the column in Product that maps to **Foreign Key** in **Table**.
+**Primary Key** is the column in Production.Product that maps to **Foreign Key** in **Table**.
 
 Table | Primary Key | Foreign Key | Foreign Key Name
 ------|-------------|-------------|-----------------
@@ -83,21 +86,21 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Sales.SpecialOfferProduct](../Sales/SpecialOfferProduct.md) | `ProductID` | `ProductID` | **FK_SpecialOfferProduct_Product_ProductID**
 
 ## Maps
-[Back to Top](#product)
+[Back to Top](#productionproduct)
 
 ### Dependency Map
-[Back to Top](#product)
+[Back to Top](#productionproduct)
 
-> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Product.
+> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Production.Product.
 
 * [Production.ProductModel](./ProductModel.md)
 * [Production.ProductSubcategory](./ProductSubcategory.md)
 * [Production.ProductCategory](./ProductCategory.md)
 * [Production.UnitMeasure](./UnitMeasure.md)
 ### Dependent Map
-[Back to Top](#product)
+[Back to Top](#productionproduct)
 
-> The following is a distinct list of tables captured by recursively evaluating tables that list Product as a foreign key dependency.
+> The following is a distinct list of tables captured by recursively evaluating tables that list Production.Product as a foreign key dependency.
 
 * [Production.BillOfMaterials](./BillOfMaterials.md)
 * [Production.ProductCostHistory](./ProductCostHistory.md)

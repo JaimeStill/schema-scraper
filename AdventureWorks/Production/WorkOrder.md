@@ -1,12 +1,15 @@
 # Production.WorkOrder
 
-**Schema**: Production
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#workorder)
+[Back to Top](#productionworkorder)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -22,7 +25,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#workorder)
+[Back to Top](#productionworkorder)
 
 
 The sections that follow define:
@@ -30,7 +33,7 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Production.WorkOrder`.
 
 ### Dependencies
-[Back to Top](#workorder)
+[Back to Top](#productionworkorder)
 
 
 **Table** refers to the table that the foreign key defined by `Production.WorkOrder` maps to.
@@ -42,23 +45,23 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Production.ScrapReason](./ScrapReason.md) | `ScrapReasonID` | `ScrapReasonID` | **FK_WorkOrder_ScrapReason_ScrapReasonID**
 
 ### Dependents
-[Back to Top](#workorder)
+[Back to Top](#productionworkorder)
 
-**Table** refers to the table that defines a foreign key mapping to WorkOrder.
+**Table** refers to the table that defines a foreign key mapping to Production.WorkOrder.
 
-**Primary Key** is the column in WorkOrder that maps to **Foreign Key** in **Table**.
+**Primary Key** is the column in Production.WorkOrder that maps to **Foreign Key** in **Table**.
 
 Table | Primary Key | Foreign Key | Foreign Key Name
 ------|-------------|-------------|-----------------
 [Production.WorkOrderRouting](./WorkOrderRouting.md) | `WorkOrderID` | `WorkOrderID` | **FK_WorkOrderRouting_WorkOrder_WorkOrderID**
 
 ## Maps
-[Back to Top](#workorder)
+[Back to Top](#productionworkorder)
 
 ### Dependency Map
-[Back to Top](#workorder)
+[Back to Top](#productionworkorder)
 
-> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table WorkOrder.
+> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Production.WorkOrder.
 
 * [Production.Product](./Product.md)
 * [Production.ProductModel](./ProductModel.md)
@@ -67,8 +70,8 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 * [Production.UnitMeasure](./UnitMeasure.md)
 * [Production.ScrapReason](./ScrapReason.md)
 ### Dependent Map
-[Back to Top](#workorder)
+[Back to Top](#productionworkorder)
 
-> The following is a distinct list of tables captured by recursively evaluating tables that list WorkOrder as a foreign key dependency.
+> The following is a distinct list of tables captured by recursively evaluating tables that list Production.WorkOrder as a foreign key dependency.
 
 * [Production.WorkOrderRouting](./WorkOrderRouting.md)

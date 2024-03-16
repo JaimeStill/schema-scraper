@@ -1,12 +1,15 @@
 # Production.ProductModelProductDescriptionCulture
 
-**Schema**: Production
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#productmodelproductdescriptionculture)
+[Back to Top](#productionproductmodelproductdescriptionculture)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -16,7 +19,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#productmodelproductdescriptionculture)
+[Back to Top](#productionproductmodelproductdescriptionculture)
 
 
 The sections that follow define:
@@ -24,7 +27,7 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Production.ProductModelProductDescriptionCulture`.
 
 ### Dependencies
-[Back to Top](#productmodelproductdescriptionculture)
+[Back to Top](#productionproductmodelproductdescriptionculture)
 
 
 **Table** refers to the table that the foreign key defined by `Production.ProductModelProductDescriptionCulture` maps to.
@@ -37,22 +40,22 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Production.ProductModel](./ProductModel.md) | `ProductModelID` | `ProductModelID` | **FK_ProductModelProductDescriptionCulture_ProductModel_ProductModelID**
 
 ### Dependents
-[Back to Top](#productmodelproductdescriptionculture)
+[Back to Top](#productionproductmodelproductdescriptionculture)
 
 No dependencies defined
 
 ## Maps
-[Back to Top](#productmodelproductdescriptionculture)
+[Back to Top](#productionproductmodelproductdescriptionculture)
 
 ### Dependency Map
-[Back to Top](#productmodelproductdescriptionculture)
+[Back to Top](#productionproductmodelproductdescriptionculture)
 
-> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table ProductModelProductDescriptionCulture.
+> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Production.ProductModelProductDescriptionCulture.
 
 * [Production.Culture](./Culture.md)
 * [Production.ProductDescription](./ProductDescription.md)
 * [Production.ProductModel](./ProductModel.md)
 ### Dependent Map
-[Back to Top](#productmodelproductdescriptionculture)
+[Back to Top](#productionproductmodelproductdescriptionculture)
 
-ProductModelProductDescriptionCulture has no dependents
+Production.ProductModelProductDescriptionCulture has no dependents

@@ -1,12 +1,15 @@
 # Person.BusinessEntity
 
-**Schema**: Person
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#businessentity)
+[Back to Top](#personbusinessentity)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -15,7 +18,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#businessentity)
+[Back to Top](#personbusinessentity)
 
 
 The sections that follow define:
@@ -23,17 +26,17 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Person.BusinessEntity`.
 
 ### Dependencies
-[Back to Top](#businessentity)
+[Back to Top](#personbusinessentity)
 
 
 No dependencies defined
 
 ### Dependents
-[Back to Top](#businessentity)
+[Back to Top](#personbusinessentity)
 
-**Table** refers to the table that defines a foreign key mapping to BusinessEntity.
+**Table** refers to the table that defines a foreign key mapping to Person.BusinessEntity.
 
-**Primary Key** is the column in BusinessEntity that maps to **Foreign Key** in **Table**.
+**Primary Key** is the column in Person.BusinessEntity that maps to **Foreign Key** in **Table**.
 
 Table | Primary Key | Foreign Key | Foreign Key Name
 ------|-------------|-------------|-----------------
@@ -44,16 +47,16 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Sales.Store](../Sales/Store.md) | `BusinessEntityID` | `BusinessEntityID` | **FK_Store_BusinessEntity_BusinessEntityID**
 
 ## Maps
-[Back to Top](#businessentity)
+[Back to Top](#personbusinessentity)
 
 ### Dependency Map
-[Back to Top](#businessentity)
+[Back to Top](#personbusinessentity)
 
-BusinessEntity has no dependencies
+Person.BusinessEntity has no dependencies
 ### Dependent Map
-[Back to Top](#businessentity)
+[Back to Top](#personbusinessentity)
 
-> The following is a distinct list of tables captured by recursively evaluating tables that list BusinessEntity as a foreign key dependency.
+> The following is a distinct list of tables captured by recursively evaluating tables that list Person.BusinessEntity as a foreign key dependency.
 
 * [Person.BusinessEntityAddress](./BusinessEntityAddress.md)
 * [Person.BusinessEntityContact](./BusinessEntityContact.md)

@@ -1,12 +1,15 @@
 # Sales.SalesTerritory
 
-**Schema**: Sales
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#salesterritory)
+[Back to Top](#salessalesterritory)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -22,7 +25,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#salesterritory)
+[Back to Top](#salessalesterritory)
 
 
 The sections that follow define:
@@ -30,7 +33,7 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Sales.SalesTerritory`.
 
 ### Dependencies
-[Back to Top](#salesterritory)
+[Back to Top](#salessalesterritory)
 
 
 **Table** refers to the table that the foreign key defined by `Sales.SalesTerritory` maps to.
@@ -41,11 +44,11 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Person.CountryRegion](../Person/CountryRegion.md) | `CountryRegionCode` | `CountryRegionCode` | **FK_SalesTerritory_CountryRegion_CountryRegionCode**
 
 ### Dependents
-[Back to Top](#salesterritory)
+[Back to Top](#salessalesterritory)
 
-**Table** refers to the table that defines a foreign key mapping to SalesTerritory.
+**Table** refers to the table that defines a foreign key mapping to Sales.SalesTerritory.
 
-**Primary Key** is the column in SalesTerritory that maps to **Foreign Key** in **Table**.
+**Primary Key** is the column in Sales.SalesTerritory that maps to **Foreign Key** in **Table**.
 
 Table | Primary Key | Foreign Key | Foreign Key Name
 ------|-------------|-------------|-----------------
@@ -56,18 +59,18 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Sales.SalesTerritoryHistory](./SalesTerritoryHistory.md) | `TerritoryID` | `TerritoryID` | **FK_SalesTerritoryHistory_SalesTerritory_TerritoryID**
 
 ## Maps
-[Back to Top](#salesterritory)
+[Back to Top](#salessalesterritory)
 
 ### Dependency Map
-[Back to Top](#salesterritory)
+[Back to Top](#salessalesterritory)
 
-> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table SalesTerritory.
+> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Sales.SalesTerritory.
 
 * [Person.CountryRegion](../Person/CountryRegion.md)
 ### Dependent Map
-[Back to Top](#salesterritory)
+[Back to Top](#salessalesterritory)
 
-> The following is a distinct list of tables captured by recursively evaluating tables that list SalesTerritory as a foreign key dependency.
+> The following is a distinct list of tables captured by recursively evaluating tables that list Sales.SalesTerritory as a foreign key dependency.
 
 * [Person.StateProvince](../Person/StateProvince.md)
 * [Person.Address](./Address.md)

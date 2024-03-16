@@ -1,12 +1,15 @@
 # Sales.CreditCard
 
-**Schema**: Sales
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#creditcard)
+[Back to Top](#salescreditcard)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -18,7 +21,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#creditcard)
+[Back to Top](#salescreditcard)
 
 
 The sections that follow define:
@@ -26,17 +29,17 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Sales.CreditCard`.
 
 ### Dependencies
-[Back to Top](#creditcard)
+[Back to Top](#salescreditcard)
 
 
 No dependencies defined
 
 ### Dependents
-[Back to Top](#creditcard)
+[Back to Top](#salescreditcard)
 
-**Table** refers to the table that defines a foreign key mapping to CreditCard.
+**Table** refers to the table that defines a foreign key mapping to Sales.CreditCard.
 
-**Primary Key** is the column in CreditCard that maps to **Foreign Key** in **Table**.
+**Primary Key** is the column in Sales.CreditCard that maps to **Foreign Key** in **Table**.
 
 Table | Primary Key | Foreign Key | Foreign Key Name
 ------|-------------|-------------|-----------------
@@ -44,16 +47,16 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Sales.SalesOrderHeader](./SalesOrderHeader.md) | `CreditCardID` | `CreditCardID` | **FK_SalesOrderHeader_CreditCard_CreditCardID**
 
 ## Maps
-[Back to Top](#creditcard)
+[Back to Top](#salescreditcard)
 
 ### Dependency Map
-[Back to Top](#creditcard)
+[Back to Top](#salescreditcard)
 
-CreditCard has no dependencies
+Sales.CreditCard has no dependencies
 ### Dependent Map
-[Back to Top](#creditcard)
+[Back to Top](#salescreditcard)
 
-> The following is a distinct list of tables captured by recursively evaluating tables that list CreditCard as a foreign key dependency.
+> The following is a distinct list of tables captured by recursively evaluating tables that list Sales.CreditCard as a foreign key dependency.
 
 * [Sales.PersonCreditCard](./PersonCreditCard.md)
 * [Sales.SalesOrderHeader](./SalesOrderHeader.md)

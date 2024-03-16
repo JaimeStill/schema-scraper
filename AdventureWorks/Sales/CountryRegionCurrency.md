@@ -1,12 +1,15 @@
 # Sales.CountryRegionCurrency
 
-**Schema**: Sales
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#countryregioncurrency)
+[Back to Top](#salescountryregioncurrency)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -15,7 +18,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#countryregioncurrency)
+[Back to Top](#salescountryregioncurrency)
 
 
 The sections that follow define:
@@ -23,7 +26,7 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Sales.CountryRegionCurrency`.
 
 ### Dependencies
-[Back to Top](#countryregioncurrency)
+[Back to Top](#salescountryregioncurrency)
 
 
 **Table** refers to the table that the foreign key defined by `Sales.CountryRegionCurrency` maps to.
@@ -35,21 +38,21 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Sales.Currency](./Currency.md) | `CurrencyCode` | `CurrencyCode` | **FK_CountryRegionCurrency_Currency_CurrencyCode**
 
 ### Dependents
-[Back to Top](#countryregioncurrency)
+[Back to Top](#salescountryregioncurrency)
 
 No dependencies defined
 
 ## Maps
-[Back to Top](#countryregioncurrency)
+[Back to Top](#salescountryregioncurrency)
 
 ### Dependency Map
-[Back to Top](#countryregioncurrency)
+[Back to Top](#salescountryregioncurrency)
 
-> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table CountryRegionCurrency.
+> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Sales.CountryRegionCurrency.
 
 * [Person.CountryRegion](../Person/CountryRegion.md)
 * [Sales.Currency](./Currency.md)
 ### Dependent Map
-[Back to Top](#countryregioncurrency)
+[Back to Top](#salescountryregioncurrency)
 
-CountryRegionCurrency has no dependents
+Sales.CountryRegionCurrency has no dependents

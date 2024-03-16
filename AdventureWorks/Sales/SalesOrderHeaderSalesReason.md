@@ -1,12 +1,15 @@
 # Sales.SalesOrderHeaderSalesReason
 
-**Schema**: Sales
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#salesorderheadersalesreason)
+[Back to Top](#salessalesorderheadersalesreason)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -15,7 +18,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#salesorderheadersalesreason)
+[Back to Top](#salessalesorderheadersalesreason)
 
 
 The sections that follow define:
@@ -23,7 +26,7 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Sales.SalesOrderHeaderSalesReason`.
 
 ### Dependencies
-[Back to Top](#salesorderheadersalesreason)
+[Back to Top](#salessalesorderheadersalesreason)
 
 
 **Table** refers to the table that the foreign key defined by `Sales.SalesOrderHeaderSalesReason` maps to.
@@ -35,17 +38,17 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Sales.SalesReason](./SalesReason.md) | `SalesReasonID` | `SalesReasonID` | **FK_SalesOrderHeaderSalesReason_SalesReason_SalesReasonID**
 
 ### Dependents
-[Back to Top](#salesorderheadersalesreason)
+[Back to Top](#salessalesorderheadersalesreason)
 
 No dependencies defined
 
 ## Maps
-[Back to Top](#salesorderheadersalesreason)
+[Back to Top](#salessalesorderheadersalesreason)
 
 ### Dependency Map
-[Back to Top](#salesorderheadersalesreason)
+[Back to Top](#salessalesorderheadersalesreason)
 
-> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table SalesOrderHeaderSalesReason.
+> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Sales.SalesOrderHeaderSalesReason.
 
 * [Sales.SalesOrderHeader](./SalesOrderHeader.md)
 * [Person.Address](../Person/Address.md)
@@ -80,6 +83,6 @@ No dependencies defined
 * [Person.CountryRegion](../Person/CountryRegion.md)
 * [Sales.SalesReason](./SalesReason.md)
 ### Dependent Map
-[Back to Top](#salesorderheadersalesreason)
+[Back to Top](#salessalesorderheadersalesreason)
 
-SalesOrderHeaderSalesReason has no dependents
+Sales.SalesOrderHeaderSalesReason has no dependents

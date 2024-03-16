@@ -1,12 +1,15 @@
 # Production.ProductProductPhoto
 
-**Schema**: Production
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#productproductphoto)
+[Back to Top](#productionproductproductphoto)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -16,7 +19,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#productproductphoto)
+[Back to Top](#productionproductproductphoto)
 
 
 The sections that follow define:
@@ -24,7 +27,7 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Production.ProductProductPhoto`.
 
 ### Dependencies
-[Back to Top](#productproductphoto)
+[Back to Top](#productionproductproductphoto)
 
 
 **Table** refers to the table that the foreign key defined by `Production.ProductProductPhoto` maps to.
@@ -36,17 +39,17 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Production.ProductPhoto](./ProductPhoto.md) | `ProductPhotoID` | `ProductPhotoID` | **FK_ProductProductPhoto_ProductPhoto_ProductPhotoID**
 
 ### Dependents
-[Back to Top](#productproductphoto)
+[Back to Top](#productionproductproductphoto)
 
 No dependencies defined
 
 ## Maps
-[Back to Top](#productproductphoto)
+[Back to Top](#productionproductproductphoto)
 
 ### Dependency Map
-[Back to Top](#productproductphoto)
+[Back to Top](#productionproductproductphoto)
 
-> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table ProductProductPhoto.
+> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Production.ProductProductPhoto.
 
 * [Production.Product](./Product.md)
 * [Production.ProductModel](./ProductModel.md)
@@ -55,6 +58,6 @@ No dependencies defined
 * [Production.UnitMeasure](./UnitMeasure.md)
 * [Production.ProductPhoto](./ProductPhoto.md)
 ### Dependent Map
-[Back to Top](#productproductphoto)
+[Back to Top](#productionproductproductphoto)
 
-ProductProductPhoto has no dependents
+Production.ProductProductPhoto has no dependents

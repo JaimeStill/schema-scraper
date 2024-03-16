@@ -1,12 +1,15 @@
 # HumanResources.Department
 
-**Schema**: HumanResources
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#department)
+[Back to Top](#humanresourcesdepartment)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -16,7 +19,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#department)
+[Back to Top](#humanresourcesdepartment)
 
 
 The sections that follow define:
@@ -24,32 +27,32 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `HumanResources.Department`.
 
 ### Dependencies
-[Back to Top](#department)
+[Back to Top](#humanresourcesdepartment)
 
 
 No dependencies defined
 
 ### Dependents
-[Back to Top](#department)
+[Back to Top](#humanresourcesdepartment)
 
-**Table** refers to the table that defines a foreign key mapping to Department.
+**Table** refers to the table that defines a foreign key mapping to HumanResources.Department.
 
-**Primary Key** is the column in Department that maps to **Foreign Key** in **Table**.
+**Primary Key** is the column in HumanResources.Department that maps to **Foreign Key** in **Table**.
 
 Table | Primary Key | Foreign Key | Foreign Key Name
 ------|-------------|-------------|-----------------
 [HumanResources.EmployeeDepartmentHistory](./EmployeeDepartmentHistory.md) | `DepartmentID` | `DepartmentID` | **FK_EmployeeDepartmentHistory_Department_DepartmentID**
 
 ## Maps
-[Back to Top](#department)
+[Back to Top](#humanresourcesdepartment)
 
 ### Dependency Map
-[Back to Top](#department)
+[Back to Top](#humanresourcesdepartment)
 
-Department has no dependencies
+HumanResources.Department has no dependencies
 ### Dependent Map
-[Back to Top](#department)
+[Back to Top](#humanresourcesdepartment)
 
-> The following is a distinct list of tables captured by recursively evaluating tables that list Department as a foreign key dependency.
+> The following is a distinct list of tables captured by recursively evaluating tables that list HumanResources.Department as a foreign key dependency.
 
 * [HumanResources.EmployeeDepartmentHistory](./EmployeeDepartmentHistory.md)

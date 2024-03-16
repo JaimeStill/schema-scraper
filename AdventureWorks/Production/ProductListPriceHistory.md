@@ -1,12 +1,15 @@
 # Production.ProductListPriceHistory
 
-**Schema**: Production
 * [Columns](#columns)
 * [Relationships](#relationships)
-* [Dependency Map](#dependency-map)
+    * [Dependencies](#dependencies)
+    * [Dependents](#dependents)
+* [Maps](#maps)
+    * [Dependency Map](#dependency-map)
+    * [Dependent Map](#dependent-map)
 
 ## Columns
-[Back to Top](#productlistpricehistory)
+[Back to Top](#productionproductlistpricehistory)
 
 Column | Type | Is Nullable
 -------|------|------------
@@ -17,7 +20,7 @@ Column | Type | Is Nullable
 **ModifiedDate** | `datetime` | False
 
 ## Relationships
-[Back to Top](#productlistpricehistory)
+[Back to Top](#productionproductlistpricehistory)
 
 
 The sections that follow define:
@@ -25,7 +28,7 @@ The sections that follow define:
 * **Dependents** - foreign key relationships defined by other tables that reference `Production.ProductListPriceHistory`.
 
 ### Dependencies
-[Back to Top](#productlistpricehistory)
+[Back to Top](#productionproductlistpricehistory)
 
 
 **Table** refers to the table that the foreign key defined by `Production.ProductListPriceHistory` maps to.
@@ -36,17 +39,17 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Production.Product](./Product.md) | `ProductID` | `ProductID` | **FK_ProductListPriceHistory_Product_ProductID**
 
 ### Dependents
-[Back to Top](#productlistpricehistory)
+[Back to Top](#productionproductlistpricehistory)
 
 No dependencies defined
 
 ## Maps
-[Back to Top](#productlistpricehistory)
+[Back to Top](#productionproductlistpricehistory)
 
 ### Dependency Map
-[Back to Top](#productlistpricehistory)
+[Back to Top](#productionproductlistpricehistory)
 
-> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table ProductListPriceHistory.
+> The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Production.ProductListPriceHistory.
 
 * [Production.Product](./Product.md)
 * [Production.ProductModel](./ProductModel.md)
@@ -54,6 +57,6 @@ No dependencies defined
 * [Production.ProductCategory](./ProductCategory.md)
 * [Production.UnitMeasure](./UnitMeasure.md)
 ### Dependent Map
-[Back to Top](#productlistpricehistory)
+[Back to Top](#productionproductlistpricehistory)
 
-ProductListPriceHistory has no dependents
+Production.ProductListPriceHistory has no dependents
