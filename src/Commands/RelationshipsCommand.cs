@@ -9,7 +9,7 @@ public class RelationshipsCommand()
 : ConnectorCommand(
     "relationships",
     "Scrape and output table relationships",
-    new Func<string, string?, string?, string?, Task>(Call),
+    new Func<string, string?, string?, string?, FileInfo, Task>(Call),
     [
         new Option<string>(
             aliases: ["--table", "-t"],
@@ -18,9 +18,9 @@ public class RelationshipsCommand()
     ]
 )
 {
-    static async Task Call(string table, string? connection, string? server, string? db)
+    static async Task Call(string table, string? connection, string? server, string? db, FileInfo sources)
     {
-        Connector connector = Connector.Generate(connection, server, db);
+        Connector connector = Connector.Generate(connection, server, db, sources);
         ScraperQuery query = new(connector);
         List<ScraperRelationship> dependencies = await query.QueryDependencies(table);
         List<ScraperRelationship> dependents = await query.QueryDependents(table);

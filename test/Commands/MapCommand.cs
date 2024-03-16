@@ -8,18 +8,23 @@ public class MapCommand()
 : CliCommand(
     "map",
     "Test out recursive dependency mapping",
-    new Func<string, Task>(Call),
+    new Func<string, FileInfo, Task>(Call),
     [
         new Option<string>(
             aliases: ["--table", "-t"],
             description: "The table to use for map testing"
+        ),
+        new Option<FileInfo>(
+            aliases: ["--sources"],
+            description: "SQL connection configuration JSON file",
+            getDefaultValue: () => new FileInfo("./connections.json")
         )
     ]
 )
 {
-    static async Task Call(string table)
+    static async Task Call(string table, FileInfo sources)
     {
-        ScraperQuery query = new("AdventureWorks");
+        ScraperQuery query = new("AdventureWorks", sources);
         List<string> tables = [ table ];
         await MapDistinct(query, table, tables);
     }

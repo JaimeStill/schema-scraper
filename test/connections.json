@@ -1,6 +1,6 @@
 {
     "AdventureWorks": {
-        "Server": ".\\DevSql",
-        "Database": "AdventureWorks2022"
+        "DataSource": ".\\DevSql",
+        "InitialCatalog": "AdventureWorks2022"
     }
 }

@@ -5,9 +5,9 @@ public abstract class ConnectorCommand : CliCommand
 {
     private readonly List<Option> connectorOptions = [
         new Option<string?>(
-                aliases: ["--connection", "-c"],
-                description: "connections.json configuration key"
-            ),
+            aliases: ["--connection", "-c"],
+            description: "connections.json configuration key"
+        ),
         new Option<string?>(
             aliases: ["--server", "-s"],
             description: "SQL server name"
@@ -15,6 +15,11 @@ public abstract class ConnectorCommand : CliCommand
         new Option<string?>(
             aliases: ["--database", "--db", "-d"],
             description: "SQL database name"
+        ),
+        new Option<FileInfo>(
+            aliases: ["--sources"],
+            description: "SQL connection configuration JSON file",
+            getDefaultValue: () => new FileInfo("./connections.json")
         )
     ];
 

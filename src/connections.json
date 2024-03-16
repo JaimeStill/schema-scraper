@@ -1,6 +1,12 @@
 {
     "AdventureWorks": {
-        "Server": ".\\DevSql",
-        "Database": "AdventureWorks2022"
+        "DataSource": ".\\DevSql",
+        "InitialCatalog": "AdventureWorks2022"
+    },
+    "AdventureWorksSql": {
+        "DataSource": ".\\DevSql",
+        "InitialCatalog": "AdventureWorks2022",
+        "UserID": "viewer",
+        "Password": "Password1234!@#$"
     }
 }

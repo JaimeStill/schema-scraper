@@ -12,12 +12,10 @@ public class Connector
         config = new(server, db);
     }
 
-    public override string ToString() => $"{config.Server}:{config.Database}";
-
-    public Connector(string key)
+    public Connector(string key, FileInfo sources)
     {
         IConfiguration builder = new ConfigurationBuilder()
-          .AddJsonFile("connections.json")
+          .AddJsonFile(sources.FullName)
           .AddEnvironmentVariables()
           .Build();
 
@@ -27,14 +25,16 @@ public class Connector
         ?? throw new Exception($"No connector configuration was found for {key}");
     }
 
-    public static Connector Generate(string? key, string? server, string? db)
+    public override string ToString() => $"{config.DataSource}:{config.InitialCatalog}";
+
+    public static Connector Generate(string? key, string? server, string? db, FileInfo sources)
     {
         if (key is not null)
-            return new(key);
+            return new(key, sources);
         else if (server is not null && db is not null)
             return new(server, db);
         else
-            throw new Exception("To initialize a SQL connection, you must either provide a connection.json key or a SQL server name and SQL database name");
+            throw new Exception("To initialize a SQL connection, you must either provide a configuration key and path to the JSON configuration or a SQL server name and SQL database name");
     }
 
     public static async Task<string> GetQuery(string file) =>
@@ -47,23 +47,17 @@ public class Connector
 
     public async Task<List<T>> Query<T>(string query)
     {
-        using SqlConnection connection = BuildConnection(config.Server, config.Database);
+        using SqlConnection connection = BuildConnection(config);
         await connection.OpenAsync();
         IEnumerable<T> result = await connection.QueryAsync<T>(query);
 
         return result.ToList();
     }
 
-    protected static SqlConnection BuildConnection(string server, string db) =>
-      new(
-        new SqlConnectionStringBuilder()
-        {
-            DataSource = server,
-            InitialCatalog = db,
-            IntegratedSecurity = true,
-            TrustServerCertificate = true,
-            ConnectRetryCount = 3,
-            ConnectRetryInterval = 10
-        }.ConnectionString
-      );
+    protected static SqlConnection BuildConnection(ConnectorConfig config)
+    {
+        string connection = config.ToConnectionString();
+        Console.WriteLine($"Creating connection on {connection}");
+        return new(connection);
+    }
 }

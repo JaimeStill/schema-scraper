@@ -9,7 +9,7 @@ public class MapsCommand()
 : ConnectorCommand(
     "maps",
     "Scrape and output recursive relationship map for a table",
-    new Func<string, string?, string?, string?, Task>(Call),
+    new Func<string, string?, string?, string?, FileInfo, Task>(Call),
     [
         new Option<string>(
             aliases: ["--table", "-t"],
@@ -18,9 +18,9 @@ public class MapsCommand()
     ]
 )
 {
-    static async Task Call(string table, string? connection, string? server, string? db)
+    static async Task Call(string table, string? connection, string? server, string? db, FileInfo sources)
     {
-        Connector connector = Connector.Generate(connection, server, db);
+        Connector connector = Connector.Generate(connection, server, db, sources);
         ScraperQuery query = new(connector);
         List<ScraperTable> dependencyMap = await query.MapDependencies(table);
         List<ScraperTable> dependentMap = await query.MapDependents(table);

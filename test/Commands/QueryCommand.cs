@@ -1,3 +1,4 @@
+using System.CommandLine;
 using SchemaScraper.Cli;
 using SchemaScraper.Models;
 using SchemaScraper.Services;
@@ -7,12 +8,19 @@ public class QueryCommand()
 : CliCommand(
     "query",
     "Test out querying with Dapper SQL Connector",
-    new Func<Task>(Call)
+    new Func<FileInfo, Task>(Call),
+    [
+        new Option<FileInfo>(
+            aliases: ["--sources"],
+            description: "SQL connection configuration JSON file",
+            getDefaultValue: () => new FileInfo("./connections.json")
+        )
+    ]
 )
 {
-    static async Task Call()
+    static async Task Call(FileInfo sources)
     {
-        ScraperQuery query = new("AdventureWorks");
+        ScraperQuery query = new("AdventureWorks", sources);
         List<ScraperTable> tables = await query.QueryTables();
 
         tables.ForEach(t => Console.WriteLine($"{t.Schema}.{t.Table} - {t.RecordCount}"));
