@@ -4,7 +4,10 @@ using SchemaScraper.Commands;
 await new CliApp(
     "SQL Schema Scraper",
     [
-        new SchemaCommand(),
-        new TestCommand()
+        new ColumnsCommand(),
+        new GenerateCommand(),
+        new MapsCommand(),
+        new RelationshipsCommand(),
+        new TablesCommand()
     ]
 ).InvokeAsync(args);

@@ -5,7 +5,7 @@ This repository contains a [Schema Scraper CLI](#schemascraper-cli) that allows 
 The [*AdventureWorks*](./AdventureWorks) directory was generated from the `src` directory by running:
 
 ```pwsh
-dotnet run -- schema generate -c "AdventureWorks"
+dotnet run -- generate -c "AdventureWorks"
 ```
 
 This generated the [*readme.md*](./AdventureWorks/readme.md) document, which contains all of the tables that have data along with the number of records in that table. Each table is linked to the specific metadata document for that table and tables are organized in sub-directories around their schema. For instance `Production.Product` is located at [*AdventureWorks/Production/Product.md*](./AdventureWorks/Production/Product.md).

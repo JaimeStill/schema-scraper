@@ -10,11 +10,11 @@ public abstract class CliCommand(
     List<CliCommand>? commands = null
 )
 {
-    readonly string name = name;
-    readonly string description = description;
-    readonly Delegate? @delegate = @delegate;
-    readonly List<Option>? options = options;
-    readonly List<CliCommand>? commands = commands;
+    protected readonly string name = name;
+    protected readonly string description = description;
+    protected readonly Delegate? @delegate = @delegate;
+    protected readonly List<CliCommand>? commands = commands;
+    protected List<Option>? options = options;
 
     public Command Build()
     {

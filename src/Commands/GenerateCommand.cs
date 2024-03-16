@@ -5,7 +5,7 @@ using SchemaScraper.Sql;
 
 namespace SchemaScraper.Commands;
 public class GenerateCommand()
-: CliCommand(
+: ConnectorCommand(
     "generate",
     "Scrape and generate schema metadata documentation",
     new Func<string, string?, string?, string?, Task>(Call),
@@ -13,18 +13,6 @@ public class GenerateCommand()
         new Option<string?>(
             aliases: ["--root", "-r"],
             description: "Root directory to generate schema metadata documentation"
-        ),
-        new Option<string?>(
-            aliases: ["--connection", "-c"],
-            description: "connections.json configuration key"
-        ),
-        new Option<string?>(
-            aliases: ["--server", "-s"],
-            description: "SQL server name"
-        ),
-        new Option<string?>(
-            aliases: ["--database", "-db", "-d"],
-            description: "SQL database name"
         )
     ]
 )

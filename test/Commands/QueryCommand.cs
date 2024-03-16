@@ -2,7 +2,7 @@ using SchemaScraper.Cli;
 using SchemaScraper.Models;
 using SchemaScraper.Services;
 
-namespace SchemaScraper.Commands;
+namespace SchemaScraper.Test.Commands;
 public class QueryCommand()
 : CliCommand(
     "query",
