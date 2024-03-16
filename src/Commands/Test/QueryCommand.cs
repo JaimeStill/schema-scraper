@@ -15,6 +15,6 @@ public class QueryCommand()
         ScraperQuery query = new("AdventureWorks");
         List<ScraperTable> tables = await query.QueryTables();
 
-        tables.ForEach(t => Console.WriteLine($"{t.Table} - {t.RecordCount}"));
+        tables.ForEach(t => Console.WriteLine($"{t.Schema}.{t.Table} - {t.RecordCount}"));
     }
 }

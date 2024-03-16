@@ -20,7 +20,7 @@ public class WriteTablesCommand()
 {
     static async Task Call(string root)
     {
-        ScraperQuery query = new("Crm");
+        ScraperQuery query = new("AdventureWorks");
         List<ScraperTable> tables = await query.QueryTables();
 
         if (Path.Exists(root))

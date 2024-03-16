@@ -10,10 +10,9 @@ public class GenerateCommand()
     "Scrape and generate schema metadata documentation",
     new Func<string, string?, string?, string?, Task>(Call),
     [
-        new Option<string>(
+        new Option<string?>(
             aliases: ["--root", "-r"],
-            description: "Root directory to generate schema metadata documentation",
-            getDefaultValue: () => Path.Join("..", "schema")
+            description: "Root directory to generate schema metadata documentation"
         ),
         new Option<string?>(
             aliases: ["--connection", "-c"],
@@ -31,11 +30,12 @@ public class GenerateCommand()
 )
 {
     static async Task Call(
-        string root, string? connection, string? server, string? db
+        string? root, string? connection, string? server, string? db
     )
     {
         Connector connector = Connector.Generate(connection, server, db);
-        ScraperWriter writer = new(root, connector);
+        string path = Path.Join("..", root ?? connection ?? db);        
+        ScraperWriter writer = new(path, connector);
         await writer.GenerateTables(writer.GenerateTable);
     }
 }

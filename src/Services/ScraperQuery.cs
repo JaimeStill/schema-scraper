@@ -22,20 +22,20 @@ public class ScraperQuery
         connector = new(server, db);
     }
 
-    public async Task<List<string>> MapDependencies(string table) =>
-        await Query<string>(table, Queries.MapDependencies);
+    public async Task<List<ScraperTable>> MapDependencies(string table) =>
+        await Query<ScraperTable>(table, Queries.MapDependencies);
 
-    public async Task<List<string>> MapDependents(string table) =>
-        await Query<string>(table, Queries.MapDependents);
+    public async Task<List<ScraperTable>> MapDependents(string table) =>
+        await Query<ScraperTable>(table, Queries.MapDependents);
 
     public async Task<List<ScraperColumn>> QueryColumns(string table) =>
         await Query<ScraperColumn>(table, Queries.QueryColumns);
 
-    public async Task<List<ScraperDependency>> QueryDependencies(string table) =>
-        await Query<ScraperDependency>(table, Queries.QueryDependencies);
+    public async Task<List<ScraperRelationship>> QueryDependencies(string table) =>
+        await Query<ScraperRelationship>(table, Queries.QueryDependencies);
 
-    public async Task<List<ScraperDependent>> QueryDependents(string table) =>
-        await Query<ScraperDependent>(table, Queries.QueryDependents);
+    public async Task<List<ScraperRelationship>> QueryDependents(string table) =>
+        await Query<ScraperRelationship>(table, Queries.QueryDependents);
 
     public async Task<List<ScraperTable>> QueryTables()
     {

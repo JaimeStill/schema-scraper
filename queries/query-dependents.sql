@@ -1,8 +1,9 @@
 SELECT
-    tp.name [DependentTable],
+    sp.name [Schema],
+    tp.name [Table],
     fk.name [ForeignKeyName],
-    cp.name [ForeignKeyColumn],
-    cr.name [DependencyKey]
+    cp.name [ForeignKey],
+    cr.name [PrimaryKey]
 FROM
     sys.foreign_keys fk
 INNER JOIN
@@ -17,6 +18,8 @@ INNER JOIN
 INNER JOIN
     sys.columns cr ON fkc.referenced_column_id = cr.column_id
     AND fkc.referenced_object_id = cr.object_id
+INNER JOIN
+    sys.schemas sp ON tp.schema_id = sp.schema_id
 WHERE
     tr.name = '{{tablename}}' -- replace with table name
     AND tp.name IN (
@@ -37,4 +40,4 @@ WHERE
             t.name, i.object_id, i.index_id, i.name
     )
 ORDER BY
-    tp.name
+    sp.name, tp.name

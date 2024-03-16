@@ -1,5 +1,6 @@
 SELECT DISTINCT
-    tp.name [Table]
+    sr.name [Schema],
+    tr.name [Table]
 FROM
     sys.foreign_keys fk
 INNER JOIN
@@ -14,10 +15,12 @@ INNER JOIN
 INNER JOIN
     sys.columns cr ON fkc.referenced_column_id = cr.column_id
     AND fkc.referenced_object_id = cr.object_id
+INNER JOIN
+    sys.schemas sr ON tr.schema_id = sr.schema_id
 WHERE
-    tr.name = '{{tablename}}' -- replace with table name
-    AND tr.name != tp.name
-    AND tp.name IN (
+    tp.name = '{{tablename}}' -- replace with table name
+    AND tp.name != tr.name
+    AND tr.name IN (
         -- only include relationships to tables with data
         SELECT
             t.name
@@ -35,4 +38,4 @@ WHERE
             t.name, i.object_id, i.index_id, i.name
     )
 ORDER BY
-    tp.name
+    sr.name, tr.name

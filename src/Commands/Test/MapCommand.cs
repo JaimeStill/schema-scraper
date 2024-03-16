@@ -1,5 +1,6 @@
 using System.CommandLine;
 using SchemaScraper.Cli;
+using SchemaScraper.Models;
 using SchemaScraper.Services;
 
 namespace SchemaScraper.Commands;
@@ -18,7 +19,7 @@ public class MapCommand()
 {
     static async Task Call(string table)
     {
-        ScraperQuery query = new("Crm");
+        ScraperQuery query = new("AdventureWorks");
         List<string> tables = [ table ];
         await MapDistinct(query, table, tables);
     }
@@ -32,15 +33,15 @@ public class MapCommand()
     {
         Console.WriteLine($"{new(' ', iter * 2)}{table}");
 
-        IEnumerable<string> maps = await query.MapDependencies(table);
-        maps = maps.Where(x => !tables.Contains(x)).ToList();
-        tables = tables.Concat(maps);
+        IEnumerable<ScraperTable> maps = await query.MapDependencies(table);
+        maps = maps.Where(x => !tables.Contains(x.Table)).ToList();
+        tables = tables.Concat(maps.Select(x => x.Table));
 
-        foreach (string map in maps)
+        foreach (ScraperTable map in maps)
         {
             await MapDistinct(
                 query,
-                map,
+                map.Table,
                 tables,
                 ++iter
             );
@@ -55,14 +56,14 @@ public class MapCommand()
     )
     {
         Console.WriteLine($"{new(' ', iter * 2)}{table}");
-        IEnumerable<string> maps = await query.MapDependencies(table);
+        IEnumerable<ScraperTable> maps = await query.MapDependencies(table);
 
-        foreach (string map in maps.Where(x => !tables.Contains(x)))
+        foreach (ScraperTable map in maps.Where(x => !tables.Contains(x.Table)))
         {
             await MapDistinctPerLeg(
                 query,
-                map,
-                tables.Concat([map]),
+                map.Table,
+                tables.Concat([map.Table]),
                 ++iter
             );
         }
