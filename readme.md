@@ -1,6 +1,16 @@
 # Schema Scraper
 
-> Currently the Schema Scraper CLI tool only supports connections to SQL Server. If a need is ever encountered, the [Connector](./src/Sql/Connector.cs) class could be abstracted around multiple providers and their interface libraries, e.g. [Npgsql](https://github.com/npgsql/npgsql) for PostgreSQL. Would need to add additional metadata to [ConnectorConfig](./src/Sql/ConnectorConfig.cs) to indicate the intended provider.
+* [Schema Scraper CLI](#schema-scraper-cli)
+    * [Run the CLI](#run-the-cli)
+    * [Commands](#commands)
+        * [Columns](#columns)
+        * [Generate](#generate)
+        * [Maps](#maps)
+        * [Relationships](#relationships)
+        * [Tables](#tables)
+    * [Configuration](#configuration)
+* [Architecture](#architecture)
+* [Notes](#notes)
 
 This repository contains a [Schema Scraper CLI](#schemascraper-cli) that allows you to connect to a SQL Server database and generate metadata documentation for all tables that contain data. This repository is configured to scrape the schema for the [AdventureWorks 2022 OLTP](https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver16&tabs=ssms) database on a local SQL Server instance named `.\DevSql`. If you want to run the CLI against a different SQL database, just adjust the keys in [*connections.json*](./src/connections.json).
 
@@ -22,10 +32,12 @@ Each table metadata document contains three sections:
     * [**Dependent Map**](./AdventureWorks/Production/Product.md#dependent-map) - Recursively analyzes the foreign key dependencies defined by tables that point to the table to identify all tables that can be mapped through those relationships.
 
 ## Schema Scraper CLI
+[Back to Top](#schema-scraper)
 
 The [*src*](./src) directory contains the `schemascraper` CLI tool. The sections that guide you through using the tool.
 
 ### Run the CLI
+[Back to Top](#schema-scraper)
 
 To run the CLI tool, you will need access to a SQL database on a machine with the [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) installed.
 
@@ -41,6 +53,7 @@ dotnet run -- generate -k "AdventureWorks"
 ```
 
 ### Commands
+[Back to Top](#schema-scraper)
 
 Every command has the following options:
 
@@ -52,6 +65,7 @@ Option | Type | Description
 **--connections -c** | `FileInfo` | SQL connection configuration JSON file. Default value is `./connections.json`.
 
 #### Columns
+[Back to Top](#schema-scraper)
 
 Scrape and output table columns.
 
@@ -97,6 +111,7 @@ ModifiedDate, datetime, False
 ```
 
 #### Generate
+[Back to Top](#schema-scraper)
 
 Scrape and generate schema metadata documentation in markdown format.
 
@@ -113,6 +128,7 @@ dotnet run -- generate -k "AdventureWorks"
 The [AdventureWorks](./AdventureWorks/) directory is an example of the output this command generates.
 
 #### Maps
+[Back to Top](#schema-scraper)
 
 Scrape and output recursive relationship maps for a table.
 
@@ -149,6 +165,7 @@ Sales.SpecialOfferProduct, False
 ```
 
 #### Relationships
+[Back to Top](#schema-scraper)
 
 Scrape and output table relationships.
 
@@ -187,6 +204,7 @@ Sales.SpecialOfferProduct, ProductID, ProductID, FK_SpecialOfferProduct_Product_
 ```
 
 #### Tables
+[Back to Top](#schema-scraper)
 
 Scrape and output database tables and their record count.
 
@@ -273,6 +291,7 @@ Sales.Store, 701
 ```
 
 ### Configuration
+[Back to Top](#schema-scraper)
 
 [**ConnectorConfig**](./src/Sql/ConnectorConfig.cs) schema
 
@@ -323,6 +342,7 @@ You can provide configuration to the CLI in two ways:
     ```
 
 ## Architecture
+[Back to Top](#schema-scraper)
 
 The project depends on three libraries:
 
@@ -357,3 +377,8 @@ The project is structured as follows:
 * [`connections.json`](./src/connections.json) - A simple JSON [`ConnectorConfig`](./src/Sql/ConnectorConfig.cs) for testing. If you clone this repository, you can replace the values with your own meaningful configurations.
 * [`Program.cs`](./src/Program.cs) - Initializes a [`CliApp`](./src/Cli/CliApp.cs) with all of the [Commands](./src/Commands/).
 * [`SchemaScraper.csproj`](./src/SchemaScraper.csproj) - .NET project configuration.
+
+## Notes
+[Back to Top](#schema-scraper)
+
+Currently the Schema Scraper CLI tool only supports connections to SQL Server. If a need is ever encountered, the [Connector](./src/Sql/Connector.cs) class could be abstracted around multiple providers and their interface libraries, e.g. [Npgsql](https://github.com/npgsql/npgsql) for PostgreSQL. Would need to add additional metadata to [ConnectorConfig](./src/Sql/ConnectorConfig.cs) to indicate the intended provider.
