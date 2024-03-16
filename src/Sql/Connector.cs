@@ -12,10 +12,10 @@ public class Connector
         config = new(server, db);
     }
 
-    public Connector(string key, FileInfo sources)
+    public Connector(string key, FileInfo connections)
     {
         IConfiguration builder = new ConfigurationBuilder()
-          .AddJsonFile(sources.FullName)
+          .AddJsonFile(connections.FullName)
           .AddEnvironmentVariables()
           .Build();
 
@@ -27,10 +27,10 @@ public class Connector
 
     public override string ToString() => $"{config.DataSource}:{config.InitialCatalog}";
 
-    public static Connector Generate(string? key, string? server, string? db, FileInfo sources)
+    public static Connector Generate(string? key, string? server, string? db, FileInfo connections)
     {
         if (key is not null)
-            return new(key, sources);
+            return new(key, connections);
         else if (server is not null && db is not null)
             return new(server, db);
         else
@@ -54,10 +54,6 @@ public class Connector
         return result.ToList();
     }
 
-    protected static SqlConnection BuildConnection(ConnectorConfig config)
-    {
-        string connection = config.ToConnectionString();
-        Console.WriteLine($"Creating connection on {connection}");
-        return new(connection);
-    }
+    protected static SqlConnection BuildConnection(ConnectorConfig config) =>
+        new(config.ToConnectionString());
 }

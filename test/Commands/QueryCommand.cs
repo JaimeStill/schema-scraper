@@ -7,20 +7,20 @@ namespace SchemaScraper.Test.Commands;
 public class QueryCommand()
 : CliCommand(
     "query",
-    "Test out querying with Dapper SQL Connector",
+    "Test out querying with Dapper SQL Connector.",
     new Func<FileInfo, Task>(Call),
     [
         new Option<FileInfo>(
-            aliases: ["--sources"],
-            description: "SQL connection configuration JSON file",
+            aliases: ["--connections"],
+            description: "SQL connection configuration JSON file.",
             getDefaultValue: () => new FileInfo("./connections.json")
         )
     ]
 )
 {
-    static async Task Call(FileInfo sources)
+    static async Task Call(FileInfo connections)
     {
-        ScraperQuery query = new("AdventureWorks", sources);
+        ScraperQuery query = new("AdventureWorks", connections);
         List<ScraperTable> tables = await query.QueryTables();
 
         tables.ForEach(t => Console.WriteLine($"{t.Schema}.{t.Table} - {t.RecordCount}"));

@@ -12,9 +12,9 @@ public class ScraperQuery
         this.connector = connector;
     }
 
-    public ScraperQuery(string key, FileInfo sources)
+    public ScraperQuery(string key, FileInfo connections)
     {
-        connector = new(key, sources);
+        connector = new(key, connections);
     }
 
     public ScraperQuery(string server, string db)

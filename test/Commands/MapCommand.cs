@@ -12,19 +12,19 @@ public class MapCommand()
     [
         new Option<string>(
             aliases: ["--table", "-t"],
-            description: "The table to use for map testing"
+            description: "The table to use for map testing."
         ),
         new Option<FileInfo>(
-            aliases: ["--sources"],
-            description: "SQL connection configuration JSON file",
+            aliases: ["--connections"],
+            description: "SQL connection configuration JSON file.",
             getDefaultValue: () => new FileInfo("./connections.json")
         )
     ]
 )
 {
-    static async Task Call(string table, FileInfo sources)
+    static async Task Call(string table, FileInfo connections)
     {
-        ScraperQuery query = new("AdventureWorks", sources);
+        ScraperQuery query = new("AdventureWorks", connections);
         List<string> tables = [ table ];
         await MapDistinct(query, table, tables);
     }

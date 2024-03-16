@@ -8,19 +8,19 @@ namespace SchemaScraper.Commands;
 public class RelationshipsCommand()
 : ConnectorCommand(
     "relationships",
-    "Scrape and output table relationships",
+    "Scrape and output table relationships.",
     new Func<string, string?, string?, string?, FileInfo, Task>(Call),
     [
         new Option<string>(
             aliases: ["--table", "-t"],
-            description: "SQL database table"
+            description: "SQL database table."
         )
     ]
 )
 {
-    static async Task Call(string table, string? connection, string? server, string? db, FileInfo sources)
+    static async Task Call(string table, string? key, string? server, string? db, FileInfo connections)
     {
-        Connector connector = Connector.Generate(connection, server, db, sources);
+        Connector connector = Connector.Generate(key, server, db, connections);
         ScraperQuery query = new(connector);
         List<ScraperRelationship> dependencies = await query.QueryDependencies(table);
         List<ScraperRelationship> dependents = await query.QueryDependents(table);

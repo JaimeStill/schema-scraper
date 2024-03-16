@@ -7,13 +7,13 @@ namespace SchemaScraper.Commands;
 public class TablesCommand()
 : ConnectorCommand(
     "tables",
-    "Scrape and output database tables",
+    "Scrape and output database tables and their record count.",
     new Func<string?, string?, string?, FileInfo, Task>(Call)
 )
 {
-    static async Task Call(string? connection, string? server, string? db, FileInfo sources)
+    static async Task Call(string? key, string? server, string? db, FileInfo connections)
     {
-        Connector connector = Connector.Generate(connection, server, db, sources);
+        Connector connector = Connector.Generate(key, server, db, connections);
         ScraperQuery query = new(connector);
         List<ScraperTable> tables = await query.QueryTables();
         Console.WriteLine("Table, RecordCount");
