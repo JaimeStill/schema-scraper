@@ -62,7 +62,7 @@ Option | Type | Description
 **--key<br />-k** | `string?` | Database connection configuration key in the JSON connections file, specified with **--connections**.
 **--server<br />-s** | `string?` | SQL server name. If used, **--database** is required.
 **--database**<br />**--db**<br />**-d** | `string?` | SQL database name. If used, **--server** is required.
-**--connections -c** | `FileInfo` | SQL connection configuration JSON file. Default value is `./connections.json`.
+**--connections<br />-c** | `FileInfo` | SQL connection configuration JSON file. Default value is `./connections.json`.
 
 #### Columns
 [Back to Top](#schema-scraper)
