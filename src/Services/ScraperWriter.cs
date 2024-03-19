@@ -258,9 +258,7 @@ public class ScraperWriter(string root, Connector connector)
         Console.WriteLine($"Generating map metadata for {table}");
         FormatHeader(writer, "Maps", table);
         await GenerateDependencyMap(writer, table);
-        writer.WriteLine();
         await GenerateDependentMap(writer, table);
-        writer.WriteLine();
     }
 
     # region Dependency Map
@@ -272,6 +270,8 @@ public class ScraperWriter(string root, Connector connector)
 
         if (hasMap)
             await WriteDependencyMap(writer, table, [table.Table]);
+
+        writer.WriteLine();
     }
 
     static void InitializeDependencyMap(StreamWriter writer, ScraperTable table, bool hasMap)
@@ -320,6 +320,8 @@ public class ScraperWriter(string root, Connector connector)
 
         if (hasMap)
             await WriteDependentMap(writer, table, [table.Table]);
+
+        writer.WriteLine();
     }
 
     static void InitializeDependentMap(StreamWriter writer, ScraperTable table, bool hasMap)
