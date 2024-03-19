@@ -269,7 +269,7 @@ public class ScraperWriter(string root, Connector connector)
         InitializeDependencyMap(writer, table, hasMap);
 
         if (hasMap)
-            await WriteDependencyMap(writer, table, [table]);
+            await WriteDependencyMap(writer, table, [table.Table]);
     }
 
     static void InitializeDependencyMap(StreamWriter writer, ScraperTable table, bool hasMap)
@@ -289,11 +289,11 @@ public class ScraperWriter(string root, Connector connector)
             );
     }
 
-    async Task WriteDependencyMap(StreamWriter writer, ScraperTable table, IEnumerable<ScraperTable> tables)
+    async Task WriteDependencyMap(StreamWriter writer, ScraperTable table, IEnumerable<string> tables)
     {
         List<ScraperTable> map = await query.MapDependencies(table.Table);
-        map = map.Where(x => !tables.Contains(x)).ToList();
-        tables = tables.Concat(map);
+        map = map.Where(x => !tables.Contains(x.Table)).ToList();
+        tables = tables.Concat(map.Select(x => x.Table));
 
         foreach (ScraperTable dep in map)
         {
@@ -317,7 +317,7 @@ public class ScraperWriter(string root, Connector connector)
         InitializeDependentMap(writer, table, hasMap);
 
         if (hasMap)
-            await WriteDependentMap(writer, table, [table]);
+            await WriteDependentMap(writer, table, [table.Table]);
     }
 
     static void InitializeDependentMap(StreamWriter writer, ScraperTable table, bool hasMap)
@@ -337,11 +337,11 @@ public class ScraperWriter(string root, Connector connector)
             );
     }
 
-    async Task WriteDependentMap(StreamWriter writer, ScraperTable table, IEnumerable<ScraperTable> tables)
+    async Task WriteDependentMap(StreamWriter writer, ScraperTable table, IEnumerable<string> tables)
     {
         List<ScraperTable> map = await query.MapDependents(table.Table);
-        map = map.Where(x => !tables.Contains(x)).ToList();
-        tables = tables.Concat(map);
+        map = map.Where(x => !tables.Contains(x.Table)).ToList();
+        tables = tables.Concat(map.Select(x => x.Table));
 
         foreach (ScraperTable dep in map)
         {
