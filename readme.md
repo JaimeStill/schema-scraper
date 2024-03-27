@@ -27,7 +27,7 @@ Each table metadata document contains three sections:
 * [**Relationships**](./AdventureWorks/Production/Product.md#relationships) - Provides the relationship metadata for the table broken down into the following sections:
     * [**Dependencies**](./AdventureWorks/Production/Product.md#dependencies) - Provides the foreign key relationships defined on the table.
     * [**Dependents**](./AdventureWorks/Production/Product.md#dpeendents) - Provides the foreign key relationships other tables define against the table.
-* [**Maps**](./AdventureWorks/Production/Product.md#maps) - Provides a unique collection of tables that can be mapped to table through a relationship dependency. It is broken down into the following sections:
+* [**Maps**](./AdventureWorks/Production/Product.md#maps) - Provides a unique collection of tables that can be mapped to table through a relationship dependency. If you made a database diagram consisting of every table in the database, these would be all of the tables that you could trace to this table through diagram connections. It is broken down into the following sections:
     * [**Dependency Map**](./AdventureWorks/Production/Product.md#dependency-map) - Recursively analyzes the foreign key dependencies defined by the table to identify all tables that can be mapped through those relationships.
     * [**Dependent Map**](./AdventureWorks/Production/Product.md#dependent-map) - Recursively analyzes the foreign key dependencies defined by tables that point to the table to identify all tables that can be mapped through those relationships.
 
