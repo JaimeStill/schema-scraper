@@ -49,9 +49,11 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Back to Top](#personcontacttype)
 
 Person.ContactType has no dependencies
+
 ### Dependent Map
 [Back to Top](#personcontacttype)
 
 > The following is a distinct list of tables captured by recursively evaluating tables that list Person.ContactType as a foreign key dependency.
 
 * [Person.BusinessEntityContact](./BusinessEntityContact.md)
+

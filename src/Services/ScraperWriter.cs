@@ -127,8 +127,26 @@ public class ScraperWriter(string root, Connector connector)
     {
         Console.WriteLine($"Generating relationship metadata for {table}");
         InitializeRelationships(writer, table);
-        await GenerateDependencies(writer, table);
-        await GenerateDependents(writer, table);
+        await WriteRelationships(writer, table, InitializeDependencies, query.QueryDependencies);
+        await WriteRelationships(writer, table, InitializeDependents, query.QueryDependents);
+    }
+
+    static async Task WriteRelationships(
+        StreamWriter writer,
+        ScraperTable table,
+        Action<StreamWriter, ScraperTable, List<ScraperRelationship>> init,
+        Func<string, Task<List<ScraperRelationship>>> query
+    )
+    {
+        List<ScraperRelationship> deps = await query(table.Table);
+        init(writer, table, deps);
+
+        foreach (ScraperRelationship dep in deps)
+            writer.WriteLine(
+                WriteRow(dep, table)
+            );
+
+        writer.WriteLine();
     }
 
     static void InitializeRelationships(StreamWriter writer, ScraperTable table)
@@ -146,24 +164,6 @@ public class ScraperWriter(string root, Connector connector)
         );
         writer.WriteLine();
 
-    }
-
-    static string WriteRow(ScraperRelationship dep, ScraperTable table) =>
-        $"{FormatRow(dep, table)} | `{dep.PrimaryKey}` | `{dep.ForeignKey}` | **{dep.ForeignKeyName}**";
-
-    #region Dependencies
-
-    async Task GenerateDependencies(StreamWriter writer, ScraperTable table)
-    {
-        List<ScraperRelationship> deps = await query.QueryDependencies(table.Table);
-        InitializeDependencies(writer, table, deps);
-
-        foreach (ScraperRelationship dep in deps)
-            writer.WriteLine(
-                WriteRow(dep, table)
-            );
-
-        writer.WriteLine();
     }
 
     static void InitializeDependencies(StreamWriter writer, ScraperTable table, List<ScraperRelationship> deps)
@@ -198,23 +198,6 @@ public class ScraperWriter(string root, Connector connector)
             );
     }
 
-    #endregion
-
-    #region Dependents
-
-    async Task GenerateDependents(StreamWriter writer, ScraperTable table)
-    {
-        List<ScraperRelationship> deps = await query.QueryDependents(table.Table);
-        InitializeDependents(writer, table, deps);
-
-        foreach (ScraperRelationship dep in deps)
-            writer.WriteLine(
-                WriteRow(dep, table)
-            );
-
-        writer.WriteLine();
-    }
-
     static void InitializeDependents(StreamWriter writer, ScraperTable table, List<ScraperRelationship> deps)
     {
         FormatHeader(writer, "Dependents", table, "###");
@@ -247,7 +230,8 @@ public class ScraperWriter(string root, Connector connector)
             );
     }
 
-    #endregion
+    static string WriteRow(ScraperRelationship dep, ScraperTable table) =>
+        $"{FormatRow(dep, table)} | `{dep.PrimaryKey}` | `{dep.ForeignKey}` | **{dep.ForeignKeyName}**";    
 
     #endregion
 
@@ -257,21 +241,53 @@ public class ScraperWriter(string root, Connector connector)
     {
         Console.WriteLine($"Generating map metadata for {table}");
         FormatHeader(writer, "Maps", table);
-        await GenerateDependencyMap(writer, table);
-        await GenerateDependentMap(writer, table);
+        await WriteMap(writer, table, InitializeDependencyMap, query.MapDependencies);
+        await WriteMap(writer, table, InitializeDependentMap, query.MapDependents);
     }
 
-    # region Dependency Map
-
-    async Task GenerateDependencyMap(StreamWriter writer, ScraperTable table)
+    static async Task WriteMap(
+        StreamWriter writer,
+        ScraperTable table,
+        Action<StreamWriter, ScraperTable, bool> init,
+        Func<string, Task<List<ScraperTable>>> query
+    )
     {
-        bool hasMap = (await query.MapDependencies(table.Table)).Count > 0;
-        InitializeDependencyMap(writer, table, hasMap);
+        bool hasMap = (await query(table.Table)).Count > 0;
+        init(writer, table, hasMap);
 
         if (hasMap)
-            await WriteDependencyMap(writer, table, [table.Table]);
+        {
+            List<ScraperTable> map = [];
+            map = await BuildMap(table, map, query);
+            map.ForEach(x => WriteMapLink(writer, x, table));
+        }
 
         writer.WriteLine();
+    }
+
+    static async Task<List<ScraperTable>> BuildMap(
+        ScraperTable table,
+        List<ScraperTable> map,
+        Func<string, Task<List<ScraperTable>>> query
+    )
+    {
+        List<ScraperTable> deps = (await query(table.Table))
+            .ExceptBy(
+                map.Select(x => x.ToString()),
+                x => x.ToString()
+            )
+            .ToList();
+
+        map.AddRange(deps);
+
+        foreach (ScraperTable dep in deps)
+            await BuildMap(dep, map, query);
+
+        return [..
+            map
+            .DistinctBy(x => x.ToString())
+            .OrderBy(x => x.ToString())
+        ];
     }
 
     static void InitializeDependencyMap(StreamWriter writer, ScraperTable table, bool hasMap)
@@ -291,39 +307,6 @@ public class ScraperWriter(string root, Connector connector)
             );
     }
 
-    async Task WriteDependencyMap(StreamWriter writer, ScraperTable table, IEnumerable<string> tables)
-    {
-        List<ScraperTable> map = await query.MapDependencies(table.Table);
-        map = map.Where(x => !tables.Contains(x.Table)).ToList();
-        tables = tables.Concat(map.Select(x => x.Table));
-
-        foreach (ScraperTable dep in map)
-        {
-            writer.WriteLine($"* {FormatLink(dep, table)}");
-
-            await WriteDependencyMap(
-                writer,
-                dep,
-                tables
-            );
-        }
-    }
-
-    #endregion
-
-    #region Dependent Map
-
-    async Task GenerateDependentMap(StreamWriter writer, ScraperTable table)
-    {
-        bool hasMap = (await query.MapDependents(table.Table)).Count > 0;
-        InitializeDependentMap(writer, table, hasMap);
-
-        if (hasMap)
-            await WriteDependentMap(writer, table, [table.Table]);
-
-        writer.WriteLine();
-    }
-
     static void InitializeDependentMap(StreamWriter writer, ScraperTable table, bool hasMap)
     {
         FormatHeader(writer, "Dependent Map", table, "###");
@@ -341,25 +324,8 @@ public class ScraperWriter(string root, Connector connector)
             );
     }
 
-    async Task WriteDependentMap(StreamWriter writer, ScraperTable table, IEnumerable<string> tables)
-    {
-        List<ScraperTable> map = await query.MapDependents(table.Table);
-        map = map.Where(x => !tables.Contains(x.Table)).ToList();
-        tables = tables.Concat(map.Select(x => x.Table));
-
-        foreach (ScraperTable dep in map)
-        {
-            writer.WriteLine($"* {FormatLink(dep, table)}");
-            
-            await WriteDependentMap(
-                writer,
-                dep,
-                tables
-            );
-        }
-    }
-
-    #endregion
+    static void WriteMapLink(StreamWriter writer, ScraperTable link, ScraperTable table) =>
+        writer.WriteLine($"* {FormatLink(link, table)}");
 
     #endregion
 

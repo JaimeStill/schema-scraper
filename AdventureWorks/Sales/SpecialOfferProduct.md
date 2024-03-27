@@ -59,14 +59,16 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 > The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Sales.SpecialOfferProduct.
 
 * [Production.Product](../Production/Product.md)
-* [Production.ProductModel](./ProductModel.md)
-* [Production.ProductSubcategory](./ProductSubcategory.md)
-* [Production.ProductCategory](./ProductCategory.md)
-* [Production.UnitMeasure](./UnitMeasure.md)
+* [Production.ProductCategory](../Production/ProductCategory.md)
+* [Production.ProductModel](../Production/ProductModel.md)
+* [Production.ProductSubcategory](../Production/ProductSubcategory.md)
+* [Production.UnitMeasure](../Production/UnitMeasure.md)
 * [Sales.SpecialOffer](./SpecialOffer.md)
+
 ### Dependent Map
 [Back to Top](#salesspecialofferproduct)
 
 > The following is a distinct list of tables captured by recursively evaluating tables that list Sales.SpecialOfferProduct as a foreign key dependency.
 
 * [Sales.SalesOrderDetail](./SalesOrderDetail.md)
+

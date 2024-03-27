@@ -53,12 +53,14 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Back to Top](#salescreditcard)
 
 Sales.CreditCard has no dependencies
+
 ### Dependent Map
 [Back to Top](#salescreditcard)
 
 > The following is a distinct list of tables captured by recursively evaluating tables that list Sales.CreditCard as a foreign key dependency.
 
 * [Sales.PersonCreditCard](./PersonCreditCard.md)
-* [Sales.SalesOrderHeader](./SalesOrderHeader.md)
 * [Sales.SalesOrderDetail](./SalesOrderDetail.md)
+* [Sales.SalesOrderHeader](./SalesOrderHeader.md)
 * [Sales.SalesOrderHeaderSalesReason](./SalesOrderHeaderSalesReason.md)
+

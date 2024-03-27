@@ -56,10 +56,12 @@ No dependencies defined
 
 * [HumanResources.Department](./Department.md)
 * [HumanResources.Employee](./Employee.md)
-* [Person.Person](../Person/Person.md)
-* [Person.BusinessEntity](./BusinessEntity.md)
 * [HumanResources.Shift](./Shift.md)
+* [Person.BusinessEntity](../Person/BusinessEntity.md)
+* [Person.Person](../Person/Person.md)
+
 ### Dependent Map
 [Back to Top](#humanresourcesemployeedepartmenthistory)
 
 HumanResources.EmployeeDepartmentHistory has no dependents
+

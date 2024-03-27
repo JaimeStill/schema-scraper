@@ -50,9 +50,11 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Back to Top](#salessalesreason)
 
 Sales.SalesReason has no dependencies
+
 ### Dependent Map
 [Back to Top](#salessalesreason)
 
 > The following is a distinct list of tables captured by recursively evaluating tables that list Sales.SalesReason as a foreign key dependency.
 
 * [Sales.SalesOrderHeaderSalesReason](./SalesOrderHeaderSalesReason.md)
+

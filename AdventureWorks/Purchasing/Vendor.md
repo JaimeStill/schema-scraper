@@ -62,11 +62,13 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 > The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Purchasing.Vendor.
 
 * [Person.BusinessEntity](../Person/BusinessEntity.md)
+
 ### Dependent Map
 [Back to Top](#purchasingvendor)
 
 > The following is a distinct list of tables captured by recursively evaluating tables that list Purchasing.Vendor as a foreign key dependency.
 
 * [Purchasing.ProductVendor](./ProductVendor.md)
-* [Purchasing.PurchaseOrderHeader](./PurchaseOrderHeader.md)
 * [Purchasing.PurchaseOrderDetail](./PurchaseOrderDetail.md)
+* [Purchasing.PurchaseOrderHeader](./PurchaseOrderHeader.md)
+

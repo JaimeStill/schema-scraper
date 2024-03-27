@@ -58,19 +58,20 @@ No dependencies defined
 
 > The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Purchasing.PurchaseOrderDetail.
 
-* [Production.Product](../Production/Product.md)
-* [Production.ProductModel](./ProductModel.md)
-* [Production.ProductSubcategory](./ProductSubcategory.md)
-* [Production.ProductCategory](./ProductCategory.md)
-* [Production.UnitMeasure](./UnitMeasure.md)
-* [Purchasing.PurchaseOrderHeader](./PurchaseOrderHeader.md)
 * [HumanResources.Employee](../HumanResources/Employee.md)
+* [Person.BusinessEntity](../Person/BusinessEntity.md)
 * [Person.Person](../Person/Person.md)
-* [Person.BusinessEntity](./BusinessEntity.md)
+* [Production.Product](../Production/Product.md)
+* [Production.ProductCategory](../Production/ProductCategory.md)
+* [Production.ProductModel](../Production/ProductModel.md)
+* [Production.ProductSubcategory](../Production/ProductSubcategory.md)
+* [Production.UnitMeasure](../Production/UnitMeasure.md)
+* [Purchasing.PurchaseOrderHeader](./PurchaseOrderHeader.md)
 * [Purchasing.ShipMethod](./ShipMethod.md)
 * [Purchasing.Vendor](./Vendor.md)
-* [Person.BusinessEntity](../Person/BusinessEntity.md)
+
 ### Dependent Map
 [Back to Top](#purchasingpurchaseorderdetail)
 
 Purchasing.PurchaseOrderDetail has no dependents
+

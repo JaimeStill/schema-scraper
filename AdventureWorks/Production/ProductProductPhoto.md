@@ -52,12 +52,14 @@ No dependencies defined
 > The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Production.ProductProductPhoto.
 
 * [Production.Product](./Product.md)
-* [Production.ProductModel](./ProductModel.md)
-* [Production.ProductSubcategory](./ProductSubcategory.md)
 * [Production.ProductCategory](./ProductCategory.md)
-* [Production.UnitMeasure](./UnitMeasure.md)
+* [Production.ProductModel](./ProductModel.md)
 * [Production.ProductPhoto](./ProductPhoto.md)
+* [Production.ProductSubcategory](./ProductSubcategory.md)
+* [Production.UnitMeasure](./UnitMeasure.md)
+
 ### Dependent Map
 [Back to Top](#productionproductproductphoto)
 
 Production.ProductProductPhoto has no dependents
+

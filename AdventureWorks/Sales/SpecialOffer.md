@@ -57,10 +57,12 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Back to Top](#salesspecialoffer)
 
 Sales.SpecialOffer has no dependencies
+
 ### Dependent Map
 [Back to Top](#salesspecialoffer)
 
 > The following is a distinct list of tables captured by recursively evaluating tables that list Sales.SpecialOffer as a foreign key dependency.
 
-* [Sales.SpecialOfferProduct](./SpecialOfferProduct.md)
 * [Sales.SalesOrderDetail](./SalesOrderDetail.md)
+* [Sales.SpecialOfferProduct](./SpecialOfferProduct.md)
+

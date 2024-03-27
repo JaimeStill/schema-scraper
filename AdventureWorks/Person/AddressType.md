@@ -50,9 +50,11 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Back to Top](#personaddresstype)
 
 Person.AddressType has no dependencies
+
 ### Dependent Map
 [Back to Top](#personaddresstype)
 
 > The following is a distinct list of tables captured by recursively evaluating tables that list Person.AddressType as a foreign key dependency.
 
 * [Person.BusinessEntityAddress](./BusinessEntityAddress.md)
+

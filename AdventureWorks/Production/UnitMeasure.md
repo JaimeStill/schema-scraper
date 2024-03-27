@@ -52,6 +52,7 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Back to Top](#productionunitmeasure)
 
 Production.UnitMeasure has no dependencies
+
 ### Dependent Map
 [Back to Top](#productionunitmeasure)
 
@@ -59,7 +60,6 @@ Production.UnitMeasure has no dependencies
 
 * [Production.BillOfMaterials](./BillOfMaterials.md)
 * [Production.Product](./Product.md)
-* [Production.BillOfMaterials](./BillOfMaterials.md)
 * [Production.ProductCostHistory](./ProductCostHistory.md)
 * [Production.ProductDocument](./ProductDocument.md)
 * [Production.ProductInventory](./ProductInventory.md)
@@ -71,7 +71,7 @@ Production.UnitMeasure has no dependencies
 * [Production.WorkOrderRouting](./WorkOrderRouting.md)
 * [Purchasing.ProductVendor](../Purchasing/ProductVendor.md)
 * [Purchasing.PurchaseOrderDetail](../Purchasing/PurchaseOrderDetail.md)
+* [Sales.SalesOrderDetail](../Sales/SalesOrderDetail.md)
 * [Sales.ShoppingCartItem](../Sales/ShoppingCartItem.md)
 * [Sales.SpecialOfferProduct](../Sales/SpecialOfferProduct.md)
-* [Sales.SalesOrderDetail](./SalesOrderDetail.md)
-* [Purchasing.ProductVendor](../Purchasing/ProductVendor.md)
+

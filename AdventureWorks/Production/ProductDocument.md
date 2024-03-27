@@ -50,16 +50,18 @@ No dependencies defined
 
 > The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Production.ProductDocument.
 
-* [Production.Document](./Document.md)
 * [HumanResources.Employee](../HumanResources/Employee.md)
+* [Person.BusinessEntity](../Person/BusinessEntity.md)
 * [Person.Person](../Person/Person.md)
-* [Person.BusinessEntity](./BusinessEntity.md)
+* [Production.Document](./Document.md)
 * [Production.Product](./Product.md)
+* [Production.ProductCategory](./ProductCategory.md)
 * [Production.ProductModel](./ProductModel.md)
 * [Production.ProductSubcategory](./ProductSubcategory.md)
-* [Production.ProductCategory](./ProductCategory.md)
 * [Production.UnitMeasure](./UnitMeasure.md)
+
 ### Dependent Map
 [Back to Top](#productionproductdocument)
 
 Production.ProductDocument has no dependents
+

@@ -48,7 +48,9 @@ No dependencies defined
 [Back to Top](#dbodatabaselog)
 
 dbo.DatabaseLog has no dependencies
+
 ### Dependent Map
 [Back to Top](#dbodatabaselog)
 
 dbo.DatabaseLog has no dependents
+

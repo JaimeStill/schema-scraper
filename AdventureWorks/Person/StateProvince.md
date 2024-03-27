@@ -64,7 +64,7 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 
 * [Person.CountryRegion](./CountryRegion.md)
 * [Sales.SalesTerritory](../Sales/SalesTerritory.md)
-* [Person.CountryRegion](../Person/CountryRegion.md)
+
 ### Dependent Map
 [Back to Top](#personstateprovince)
 
@@ -72,7 +72,8 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 
 * [Person.Address](./Address.md)
 * [Person.BusinessEntityAddress](./BusinessEntityAddress.md)
+* [Sales.SalesOrderDetail](../Sales/SalesOrderDetail.md)
 * [Sales.SalesOrderHeader](../Sales/SalesOrderHeader.md)
-* [Sales.SalesOrderDetail](./SalesOrderDetail.md)
-* [Sales.SalesOrderHeaderSalesReason](./SalesOrderHeaderSalesReason.md)
+* [Sales.SalesOrderHeaderSalesReason](../Sales/SalesOrderHeaderSalesReason.md)
 * [Sales.SalesTaxRate](../Sales/SalesTaxRate.md)
+

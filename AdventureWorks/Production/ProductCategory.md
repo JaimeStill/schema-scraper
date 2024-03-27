@@ -50,25 +50,27 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Back to Top](#productionproductcategory)
 
 Production.ProductCategory has no dependencies
+
 ### Dependent Map
 [Back to Top](#productionproductcategory)
 
 > The following is a distinct list of tables captured by recursively evaluating tables that list Production.ProductCategory as a foreign key dependency.
 
-* [Production.ProductSubcategory](./ProductSubcategory.md)
-* [Production.Product](./Product.md)
 * [Production.BillOfMaterials](./BillOfMaterials.md)
+* [Production.Product](./Product.md)
 * [Production.ProductCostHistory](./ProductCostHistory.md)
 * [Production.ProductDocument](./ProductDocument.md)
 * [Production.ProductInventory](./ProductInventory.md)
 * [Production.ProductListPriceHistory](./ProductListPriceHistory.md)
 * [Production.ProductProductPhoto](./ProductProductPhoto.md)
 * [Production.ProductReview](./ProductReview.md)
+* [Production.ProductSubcategory](./ProductSubcategory.md)
 * [Production.TransactionHistory](./TransactionHistory.md)
 * [Production.WorkOrder](./WorkOrder.md)
 * [Production.WorkOrderRouting](./WorkOrderRouting.md)
 * [Purchasing.ProductVendor](../Purchasing/ProductVendor.md)
 * [Purchasing.PurchaseOrderDetail](../Purchasing/PurchaseOrderDetail.md)
+* [Sales.SalesOrderDetail](../Sales/SalesOrderDetail.md)
 * [Sales.ShoppingCartItem](../Sales/ShoppingCartItem.md)
 * [Sales.SpecialOfferProduct](../Sales/SpecialOfferProduct.md)
-* [Sales.SalesOrderDetail](./SalesOrderDetail.md)
+

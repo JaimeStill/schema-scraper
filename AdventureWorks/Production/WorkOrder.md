@@ -64,14 +64,16 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 > The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Production.WorkOrder.
 
 * [Production.Product](./Product.md)
+* [Production.ProductCategory](./ProductCategory.md)
 * [Production.ProductModel](./ProductModel.md)
 * [Production.ProductSubcategory](./ProductSubcategory.md)
-* [Production.ProductCategory](./ProductCategory.md)
-* [Production.UnitMeasure](./UnitMeasure.md)
 * [Production.ScrapReason](./ScrapReason.md)
+* [Production.UnitMeasure](./UnitMeasure.md)
+
 ### Dependent Map
 [Back to Top](#productionworkorder)
 
 > The following is a distinct list of tables captured by recursively evaluating tables that list Production.WorkOrder as a foreign key dependency.
 
 * [Production.WorkOrderRouting](./WorkOrderRouting.md)
+

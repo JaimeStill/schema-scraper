@@ -53,11 +53,12 @@ No dependencies defined
 
 > The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Sales.SalesTaxRate.
 
-* [Person.StateProvince](../Person/StateProvince.md)
-* [Person.CountryRegion](./CountryRegion.md)
-* [Sales.SalesTerritory](../Sales/SalesTerritory.md)
 * [Person.CountryRegion](../Person/CountryRegion.md)
+* [Person.StateProvince](../Person/StateProvince.md)
+* [Sales.SalesTerritory](./SalesTerritory.md)
+
 ### Dependent Map
 [Back to Top](#salessalestaxrate)
 
 Sales.SalesTaxRate has no dependents
+

@@ -56,11 +56,13 @@ No dependencies defined
 
 * [Production.Location](./Location.md)
 * [Production.Product](./Product.md)
+* [Production.ProductCategory](./ProductCategory.md)
 * [Production.ProductModel](./ProductModel.md)
 * [Production.ProductSubcategory](./ProductSubcategory.md)
-* [Production.ProductCategory](./ProductCategory.md)
 * [Production.UnitMeasure](./UnitMeasure.md)
+
 ### Dependent Map
 [Back to Top](#productionproductinventory)
 
 Production.ProductInventory has no dependents
+

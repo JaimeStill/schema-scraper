@@ -49,9 +49,11 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Back to Top](#personphonenumbertype)
 
 Person.PhoneNumberType has no dependencies
+
 ### Dependent Map
 [Back to Top](#personphonenumbertype)
 
 > The following is a distinct list of tables captured by recursively evaluating tables that list Person.PhoneNumberType as a foreign key dependency.
 
 * [Person.PersonPhone](./PersonPhone.md)
+

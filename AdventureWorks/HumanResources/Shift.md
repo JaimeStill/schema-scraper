@@ -51,9 +51,11 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Back to Top](#humanresourcesshift)
 
 HumanResources.Shift has no dependencies
+
 ### Dependent Map
 [Back to Top](#humanresourcesshift)
 
 > The following is a distinct list of tables captured by recursively evaluating tables that list HumanResources.Shift as a foreign key dependency.
 
 * [HumanResources.EmployeeDepartmentHistory](./EmployeeDepartmentHistory.md)
+

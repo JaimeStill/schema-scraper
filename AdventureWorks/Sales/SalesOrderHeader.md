@@ -86,36 +86,21 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 
 > The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Sales.SalesOrderHeader.
 
+* [HumanResources.Employee](../HumanResources/Employee.md)
 * [Person.Address](../Person/Address.md)
-* [Person.StateProvince](./StateProvince.md)
-* [Person.CountryRegion](./CountryRegion.md)
-* [Sales.SalesTerritory](../Sales/SalesTerritory.md)
+* [Person.BusinessEntity](../Person/BusinessEntity.md)
 * [Person.CountryRegion](../Person/CountryRegion.md)
+* [Person.Person](../Person/Person.md)
+* [Person.StateProvince](../Person/StateProvince.md)
 * [Purchasing.ShipMethod](../Purchasing/ShipMethod.md)
 * [Sales.CreditCard](./CreditCard.md)
-* [Sales.CurrencyRate](./CurrencyRate.md)
 * [Sales.Currency](./Currency.md)
+* [Sales.CurrencyRate](./CurrencyRate.md)
 * [Sales.Customer](./Customer.md)
-* [Person.Person](../Person/Person.md)
-* [Person.BusinessEntity](./BusinessEntity.md)
+* [Sales.SalesPerson](./SalesPerson.md)
 * [Sales.SalesTerritory](./SalesTerritory.md)
-* [Person.CountryRegion](../Person/CountryRegion.md)
 * [Sales.Store](./Store.md)
-* [Person.BusinessEntity](../Person/BusinessEntity.md)
-* [Sales.SalesPerson](./SalesPerson.md)
-* [HumanResources.Employee](../HumanResources/Employee.md)
-* [Person.Person](../Person/Person.md)
-* [Person.BusinessEntity](./BusinessEntity.md)
-* [Sales.SalesTerritory](./SalesTerritory.md)
-* [Person.CountryRegion](../Person/CountryRegion.md)
-* [Sales.SalesPerson](./SalesPerson.md)
-* [HumanResources.Employee](../HumanResources/Employee.md)
-* [Person.Person](../Person/Person.md)
-* [Person.BusinessEntity](./BusinessEntity.md)
-* [Sales.SalesTerritory](./SalesTerritory.md)
-* [Person.CountryRegion](../Person/CountryRegion.md)
-* [Sales.SalesTerritory](./SalesTerritory.md)
-* [Person.CountryRegion](../Person/CountryRegion.md)
+
 ### Dependent Map
 [Back to Top](#salessalesorderheader)
 
@@ -123,3 +108,4 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 
 * [Sales.SalesOrderDetail](./SalesOrderDetail.md)
 * [Sales.SalesOrderHeaderSalesReason](./SalesOrderHeaderSalesReason.md)
+

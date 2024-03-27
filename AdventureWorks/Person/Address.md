@@ -63,16 +63,17 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 
 > The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Person.Address.
 
-* [Person.StateProvince](./StateProvince.md)
 * [Person.CountryRegion](./CountryRegion.md)
+* [Person.StateProvince](./StateProvince.md)
 * [Sales.SalesTerritory](../Sales/SalesTerritory.md)
-* [Person.CountryRegion](../Person/CountryRegion.md)
+
 ### Dependent Map
 [Back to Top](#personaddress)
 
 > The following is a distinct list of tables captured by recursively evaluating tables that list Person.Address as a foreign key dependency.
 
 * [Person.BusinessEntityAddress](./BusinessEntityAddress.md)
+* [Sales.SalesOrderDetail](../Sales/SalesOrderDetail.md)
 * [Sales.SalesOrderHeader](../Sales/SalesOrderHeader.md)
-* [Sales.SalesOrderDetail](./SalesOrderDetail.md)
-* [Sales.SalesOrderHeaderSalesReason](./SalesOrderHeaderSalesReason.md)
+* [Sales.SalesOrderHeaderSalesReason](../Sales/SalesOrderHeaderSalesReason.md)
+

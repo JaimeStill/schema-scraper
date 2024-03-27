@@ -49,6 +49,7 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Back to Top](#productionscrapreason)
 
 Production.ScrapReason has no dependencies
+
 ### Dependent Map
 [Back to Top](#productionscrapreason)
 
@@ -56,3 +57,4 @@ Production.ScrapReason has no dependencies
 
 * [Production.WorkOrder](./WorkOrder.md)
 * [Production.WorkOrderRouting](./WorkOrderRouting.md)
+

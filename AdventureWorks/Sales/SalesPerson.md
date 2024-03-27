@@ -66,22 +66,21 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 > The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Sales.SalesPerson.
 
 * [HumanResources.Employee](../HumanResources/Employee.md)
-* [Person.Person](../Person/Person.md)
-* [Person.BusinessEntity](./BusinessEntity.md)
-* [Sales.SalesTerritory](./SalesTerritory.md)
+* [Person.BusinessEntity](../Person/BusinessEntity.md)
 * [Person.CountryRegion](../Person/CountryRegion.md)
+* [Person.Person](../Person/Person.md)
+* [Sales.SalesTerritory](./SalesTerritory.md)
+
 ### Dependent Map
 [Back to Top](#salessalesperson)
 
 > The following is a distinct list of tables captured by recursively evaluating tables that list Sales.SalesPerson as a foreign key dependency.
 
-* [Sales.SalesOrderHeader](./SalesOrderHeader.md)
+* [Sales.Customer](./Customer.md)
 * [Sales.SalesOrderDetail](./SalesOrderDetail.md)
+* [Sales.SalesOrderHeader](./SalesOrderHeader.md)
 * [Sales.SalesOrderHeaderSalesReason](./SalesOrderHeaderSalesReason.md)
 * [Sales.SalesPersonQuotaHistory](./SalesPersonQuotaHistory.md)
 * [Sales.SalesTerritoryHistory](./SalesTerritoryHistory.md)
 * [Sales.Store](./Store.md)
-* [Sales.Customer](./Customer.md)
-* [Sales.SalesOrderHeader](./SalesOrderHeader.md)
-* [Sales.SalesOrderDetail](./SalesOrderDetail.md)
-* [Sales.SalesOrderHeaderSalesReason](./SalesOrderHeaderSalesReason.md)
+

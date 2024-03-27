@@ -53,15 +53,15 @@ No dependencies defined
 
 > The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Sales.SalesTerritoryHistory.
 
-* [Sales.SalesPerson](./SalesPerson.md)
 * [HumanResources.Employee](../HumanResources/Employee.md)
+* [Person.BusinessEntity](../Person/BusinessEntity.md)
+* [Person.CountryRegion](../Person/CountryRegion.md)
 * [Person.Person](../Person/Person.md)
-* [Person.BusinessEntity](./BusinessEntity.md)
+* [Sales.SalesPerson](./SalesPerson.md)
 * [Sales.SalesTerritory](./SalesTerritory.md)
-* [Person.CountryRegion](../Person/CountryRegion.md)
-* [Sales.SalesTerritory](./SalesTerritory.md)
-* [Person.CountryRegion](../Person/CountryRegion.md)
+
 ### Dependent Map
 [Back to Top](#salessalesterritoryhistory)
 
 Sales.SalesTerritoryHistory has no dependents
+

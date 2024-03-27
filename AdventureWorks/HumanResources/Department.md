@@ -50,9 +50,11 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Back to Top](#humanresourcesdepartment)
 
 HumanResources.Department has no dependencies
+
 ### Dependent Map
 [Back to Top](#humanresourcesdepartment)
 
 > The following is a distinct list of tables captured by recursively evaluating tables that list HumanResources.Department as a foreign key dependency.
 
 * [HumanResources.EmployeeDepartmentHistory](./EmployeeDepartmentHistory.md)
+

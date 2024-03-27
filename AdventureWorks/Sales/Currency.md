@@ -51,6 +51,7 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Back to Top](#salescurrency)
 
 Sales.Currency has no dependencies
+
 ### Dependent Map
 [Back to Top](#salescurrency)
 
@@ -58,6 +59,7 @@ Sales.Currency has no dependencies
 
 * [Sales.CountryRegionCurrency](./CountryRegionCurrency.md)
 * [Sales.CurrencyRate](./CurrencyRate.md)
-* [Sales.SalesOrderHeader](./SalesOrderHeader.md)
 * [Sales.SalesOrderDetail](./SalesOrderDetail.md)
+* [Sales.SalesOrderHeader](./SalesOrderHeader.md)
 * [Sales.SalesOrderHeaderSalesReason](./SalesOrderHeaderSalesReason.md)
+

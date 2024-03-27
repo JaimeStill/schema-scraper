@@ -68,14 +68,15 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 > The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Purchasing.PurchaseOrderHeader.
 
 * [HumanResources.Employee](../HumanResources/Employee.md)
+* [Person.BusinessEntity](../Person/BusinessEntity.md)
 * [Person.Person](../Person/Person.md)
-* [Person.BusinessEntity](./BusinessEntity.md)
 * [Purchasing.ShipMethod](./ShipMethod.md)
 * [Purchasing.Vendor](./Vendor.md)
-* [Person.BusinessEntity](../Person/BusinessEntity.md)
+
 ### Dependent Map
 [Back to Top](#purchasingpurchaseorderheader)
 
 > The following is a distinct list of tables captured by recursively evaluating tables that list Purchasing.PurchaseOrderHeader as a foreign key dependency.
 
 * [Purchasing.PurchaseOrderDetail](./PurchaseOrderDetail.md)
+

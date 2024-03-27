@@ -53,13 +53,15 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 [Back to Top](#purchasingshipmethod)
 
 Purchasing.ShipMethod has no dependencies
+
 ### Dependent Map
 [Back to Top](#purchasingshipmethod)
 
 > The following is a distinct list of tables captured by recursively evaluating tables that list Purchasing.ShipMethod as a foreign key dependency.
 
-* [Purchasing.PurchaseOrderHeader](./PurchaseOrderHeader.md)
 * [Purchasing.PurchaseOrderDetail](./PurchaseOrderDetail.md)
+* [Purchasing.PurchaseOrderHeader](./PurchaseOrderHeader.md)
+* [Sales.SalesOrderDetail](../Sales/SalesOrderDetail.md)
 * [Sales.SalesOrderHeader](../Sales/SalesOrderHeader.md)
-* [Sales.SalesOrderDetail](./SalesOrderDetail.md)
-* [Sales.SalesOrderHeaderSalesReason](./SalesOrderHeaderSalesReason.md)
+* [Sales.SalesOrderHeaderSalesReason](../Sales/SalesOrderHeaderSalesReason.md)
+

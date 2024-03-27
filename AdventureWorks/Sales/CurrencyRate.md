@@ -61,11 +61,13 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 > The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Sales.CurrencyRate.
 
 * [Sales.Currency](./Currency.md)
+
 ### Dependent Map
 [Back to Top](#salescurrencyrate)
 
 > The following is a distinct list of tables captured by recursively evaluating tables that list Sales.CurrencyRate as a foreign key dependency.
 
-* [Sales.SalesOrderHeader](./SalesOrderHeader.md)
 * [Sales.SalesOrderDetail](./SalesOrderDetail.md)
+* [Sales.SalesOrderHeader](./SalesOrderHeader.md)
 * [Sales.SalesOrderHeaderSalesReason](./SalesOrderHeaderSalesReason.md)
+

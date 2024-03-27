@@ -60,14 +60,16 @@ No dependencies defined
 > The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Production.WorkOrderRouting.
 
 * [Production.Location](./Location.md)
-* [Production.WorkOrder](./WorkOrder.md)
 * [Production.Product](./Product.md)
+* [Production.ProductCategory](./ProductCategory.md)
 * [Production.ProductModel](./ProductModel.md)
 * [Production.ProductSubcategory](./ProductSubcategory.md)
-* [Production.ProductCategory](./ProductCategory.md)
-* [Production.UnitMeasure](./UnitMeasure.md)
 * [Production.ScrapReason](./ScrapReason.md)
+* [Production.UnitMeasure](./UnitMeasure.md)
+* [Production.WorkOrder](./WorkOrder.md)
+
 ### Dependent Map
 [Back to Top](#productionworkorderrouting)
 
 Production.WorkOrderRouting has no dependents
+

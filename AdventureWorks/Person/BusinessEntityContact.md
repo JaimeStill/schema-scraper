@@ -56,8 +56,9 @@ No dependencies defined
 * [Person.BusinessEntity](./BusinessEntity.md)
 * [Person.ContactType](./ContactType.md)
 * [Person.Person](./Person.md)
-* [Person.BusinessEntity](./BusinessEntity.md)
+
 ### Dependent Map
 [Back to Top](#personbusinessentitycontact)
 
 Person.BusinessEntityContact has no dependents
+

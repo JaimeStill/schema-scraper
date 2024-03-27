@@ -93,10 +93,11 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 
 > The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Production.Product.
 
+* [Production.ProductCategory](./ProductCategory.md)
 * [Production.ProductModel](./ProductModel.md)
 * [Production.ProductSubcategory](./ProductSubcategory.md)
-* [Production.ProductCategory](./ProductCategory.md)
 * [Production.UnitMeasure](./UnitMeasure.md)
+
 ### Dependent Map
 [Back to Top](#productionproduct)
 
@@ -114,6 +115,7 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 * [Production.WorkOrderRouting](./WorkOrderRouting.md)
 * [Purchasing.ProductVendor](../Purchasing/ProductVendor.md)
 * [Purchasing.PurchaseOrderDetail](../Purchasing/PurchaseOrderDetail.md)
+* [Sales.SalesOrderDetail](../Sales/SalesOrderDetail.md)
 * [Sales.ShoppingCartItem](../Sales/ShoppingCartItem.md)
 * [Sales.SpecialOfferProduct](../Sales/SpecialOfferProduct.md)
-* [Sales.SalesOrderDetail](./SalesOrderDetail.md)
+

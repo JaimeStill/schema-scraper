@@ -53,11 +53,13 @@ No dependencies defined
 > The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Sales.ShoppingCartItem.
 
 * [Production.Product](../Production/Product.md)
-* [Production.ProductModel](./ProductModel.md)
-* [Production.ProductSubcategory](./ProductSubcategory.md)
-* [Production.ProductCategory](./ProductCategory.md)
-* [Production.UnitMeasure](./UnitMeasure.md)
+* [Production.ProductCategory](../Production/ProductCategory.md)
+* [Production.ProductModel](../Production/ProductModel.md)
+* [Production.ProductSubcategory](../Production/ProductSubcategory.md)
+* [Production.UnitMeasure](../Production/UnitMeasure.md)
+
 ### Dependent Map
 [Back to Top](#salesshoppingcartitem)
 
 Sales.ShoppingCartItem has no dependents
+

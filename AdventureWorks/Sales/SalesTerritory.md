@@ -67,34 +67,22 @@ Table | Primary Key | Foreign Key | Foreign Key Name
 > The following is a distinct list of tables captured by recursively evaluating the foreign key dependency tree for table Sales.SalesTerritory.
 
 * [Person.CountryRegion](../Person/CountryRegion.md)
+
 ### Dependent Map
 [Back to Top](#salessalesterritory)
 
 > The following is a distinct list of tables captured by recursively evaluating tables that list Sales.SalesTerritory as a foreign key dependency.
 
+* [Person.Address](../Person/Address.md)
+* [Person.BusinessEntityAddress](../Person/BusinessEntityAddress.md)
 * [Person.StateProvince](../Person/StateProvince.md)
-* [Person.Address](./Address.md)
-* [Person.BusinessEntityAddress](./BusinessEntityAddress.md)
-* [Sales.SalesOrderHeader](../Sales/SalesOrderHeader.md)
-* [Sales.SalesOrderDetail](./SalesOrderDetail.md)
-* [Sales.SalesOrderHeaderSalesReason](./SalesOrderHeaderSalesReason.md)
-* [Sales.SalesTaxRate](../Sales/SalesTaxRate.md)
 * [Sales.Customer](./Customer.md)
-* [Sales.SalesOrderHeader](./SalesOrderHeader.md)
 * [Sales.SalesOrderDetail](./SalesOrderDetail.md)
-* [Sales.SalesOrderHeaderSalesReason](./SalesOrderHeaderSalesReason.md)
 * [Sales.SalesOrderHeader](./SalesOrderHeader.md)
-* [Sales.SalesOrderDetail](./SalesOrderDetail.md)
 * [Sales.SalesOrderHeaderSalesReason](./SalesOrderHeaderSalesReason.md)
 * [Sales.SalesPerson](./SalesPerson.md)
-* [Sales.SalesOrderHeader](./SalesOrderHeader.md)
-* [Sales.SalesOrderDetail](./SalesOrderDetail.md)
-* [Sales.SalesOrderHeaderSalesReason](./SalesOrderHeaderSalesReason.md)
 * [Sales.SalesPersonQuotaHistory](./SalesPersonQuotaHistory.md)
+* [Sales.SalesTaxRate](./SalesTaxRate.md)
 * [Sales.SalesTerritoryHistory](./SalesTerritoryHistory.md)
 * [Sales.Store](./Store.md)
-* [Sales.Customer](./Customer.md)
-* [Sales.SalesOrderHeader](./SalesOrderHeader.md)
-* [Sales.SalesOrderDetail](./SalesOrderDetail.md)
-* [Sales.SalesOrderHeaderSalesReason](./SalesOrderHeaderSalesReason.md)
-* [Sales.SalesTerritoryHistory](./SalesTerritoryHistory.md)
+

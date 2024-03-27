@@ -52,7 +52,9 @@ No dependencies defined
 
 * [Person.CountryRegion](../Person/CountryRegion.md)
 * [Sales.Currency](./Currency.md)
+
 ### Dependent Map
 [Back to Top](#salescountryregioncurrency)
 
 Sales.CountryRegionCurrency has no dependents
+
